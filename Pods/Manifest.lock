@@ -1,0 +1,13 @@
+PODS:
+  - Colours (5.3.0)
+  - Mixpanel (2.3.5)
+
+DEPENDENCIES:
+  - Colours
+  - Mixpanel (< 2.3.6)
+
+SPEC CHECKSUMS:
+  Colours: 60b2e4dbdf2a0f077a98a07dae1ed18ac3333e21
+  Mixpanel: 73ab2e90b651fee096a16448004df39ca535cd72
+
+COCOAPODS: 0.32.1

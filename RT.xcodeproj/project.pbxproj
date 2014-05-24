@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		481F9814F2404F238DC81687 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE83BFD06E1941738224FFF6 /* libPods.a */; };
 		8DF569B11930321A0085EF05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569B01930321A0085EF05 /* Foundation.framework */; };
 		8DF569B31930321A0085EF05 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569B21930321A0085EF05 /* CoreGraphics.framework */; };
 		8DF569B51930321A0085EF05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569B41930321A0085EF05 /* UIKit.framework */; };
@@ -14,13 +15,30 @@
 		8DF569BD1930321A0085EF05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF569BC1930321A0085EF05 /* main.m */; };
 		8DF569C11930321A0085EF05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF569C01930321A0085EF05 /* AppDelegate.m */; };
 		8DF569C41930321A0085EF05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF569C21930321A0085EF05 /* Main.storyboard */; };
-		8DF569C71930321A0085EF05 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF569C61930321A0085EF05 /* ViewController.m */; };
 		8DF569C91930321A0085EF05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DF569C81930321A0085EF05 /* Images.xcassets */; };
 		8DF569D01930321A0085EF05 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569CF1930321A0085EF05 /* XCTest.framework */; };
 		8DF569D11930321A0085EF05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569B01930321A0085EF05 /* Foundation.framework */; };
 		8DF569D21930321A0085EF05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569B41930321A0085EF05 /* UIKit.framework */; };
 		8DF569DA1930321A0085EF05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8DF569D81930321A0085EF05 /* InfoPlist.strings */; };
 		8DF569DC1930321A0085EF05 /* RTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF569DB1930321A0085EF05 /* RTTests.m */; };
+		8DF569E71930336F0085EF05 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF569E61930336F0085EF05 /* RestaurantViewController.m */; };
+		8DF569E9193033B70085EF05 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569E8193033B70085EF05 /* Parse.framework */; };
+		8DF569F4193036640085EF05 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569F3193036640085EF05 /* FacebookSDK.framework */; };
+		8DF569F6193036770085EF05 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569F5193036770085EF05 /* Social.framework */; };
+		8DF569F81930367C0085EF05 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569F71930367C0085EF05 /* Accounts.framework */; };
+		8DF569FA193036D80085EF05 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569F9193036D80085EF05 /* SystemConfiguration.framework */; };
+		8DF569FC193036EA0085EF05 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569FB193036EA0085EF05 /* Security.framework */; };
+		8DF569FE193036F80085EF05 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569FD193036F80085EF05 /* libz.1.1.3.dylib */; };
+		8DF56A00193037040085EF05 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569FF193037040085EF05 /* StoreKit.framework */; };
+		8DF56A021930373F0085EF05 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF56A011930373F0085EF05 /* AudioToolbox.framework */; };
+		8DF56A041930374A0085EF05 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF56A031930374A0085EF05 /* CFNetwork.framework */; };
+		8DF56A06193037650085EF05 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF56A05193037650085EF05 /* CoreLocation.framework */; };
+		8DF56A081930376C0085EF05 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF56A071930376C0085EF05 /* MobileCoreServices.framework */; };
+		8DF56A0A193037720085EF05 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF56A09193037720085EF05 /* QuartzCore.framework */; };
+		8DF56A0D19303D050085EF05 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF56A0C19303D050085EF05 /* LocationViewController.m */; };
+		8DF56A13193045AB0085EF05 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF56A12193045AB0085EF05 /* MenuViewController.m */; };
+		8DF56A1519304BC20085EF05 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF56A1419304BC20085EF05 /* iAd.framework */; };
+		8DF56A1719304C070085EF05 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF56A1619304C070085EF05 /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E6C3F48934345D6B5FCAFFD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8DF569AD1930321A0085EF05 /* RT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF569B01930321A0085EF05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8DF569B21930321A0085EF05 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +64,34 @@
 		8DF569BF1930321A0085EF05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8DF569C01930321A0085EF05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8DF569C31930321A0085EF05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8DF569C51930321A0085EF05 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8DF569C61930321A0085EF05 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8DF569C81930321A0085EF05 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8DF569CE1930321A0085EF05 /* RTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF569CF1930321A0085EF05 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8DF569D71930321A0085EF05 /* RTTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RTTests-Info.plist"; sourceTree = "<group>"; };
 		8DF569D91930321A0085EF05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8DF569DB1930321A0085EF05 /* RTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTTests.m; sourceTree = "<group>"; };
+		8DF569E51930336F0085EF05 /* RestaurantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantViewController.h; sourceTree = "<group>"; };
+		8DF569E61930336F0085EF05 /* RestaurantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantViewController.m; sourceTree = "<group>"; };
+		8DF569E8193033B70085EF05 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		8DF569F3193036640085EF05 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		8DF569F5193036770085EF05 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		8DF569F71930367C0085EF05 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		8DF569F9193036D80085EF05 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8DF569FB193036EA0085EF05 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8DF569FD193036F80085EF05 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		8DF569FF193037040085EF05 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8DF56A011930373F0085EF05 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8DF56A031930374A0085EF05 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		8DF56A05193037650085EF05 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8DF56A071930376C0085EF05 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8DF56A09193037720085EF05 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8DF56A0B19303D050085EF05 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		8DF56A0C19303D050085EF05 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		8DF56A11193045AB0085EF05 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		8DF56A12193045AB0085EF05 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		8DF56A1419304BC20085EF05 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		8DF56A1619304C070085EF05 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		DE83BFD06E1941738224FFF6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +99,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DF56A1719304C070085EF05 /* AdSupport.framework in Frameworks */,
+				8DF56A1519304BC20085EF05 /* iAd.framework in Frameworks */,
+				8DF56A0A193037720085EF05 /* QuartzCore.framework in Frameworks */,
+				8DF56A081930376C0085EF05 /* MobileCoreServices.framework in Frameworks */,
+				8DF56A06193037650085EF05 /* CoreLocation.framework in Frameworks */,
 				8DF569B31930321A0085EF05 /* CoreGraphics.framework in Frameworks */,
+				8DF56A041930374A0085EF05 /* CFNetwork.framework in Frameworks */,
+				8DF56A021930373F0085EF05 /* AudioToolbox.framework in Frameworks */,
+				8DF56A00193037040085EF05 /* StoreKit.framework in Frameworks */,
+				8DF569FE193036F80085EF05 /* libz.1.1.3.dylib in Frameworks */,
+				8DF569FC193036EA0085EF05 /* Security.framework in Frameworks */,
+				8DF569FA193036D80085EF05 /* SystemConfiguration.framework in Frameworks */,
+				8DF569F81930367C0085EF05 /* Accounts.framework in Frameworks */,
+				8DF569F6193036770085EF05 /* Social.framework in Frameworks */,
 				8DF569B51930321A0085EF05 /* UIKit.framework in Frameworks */,
+				8DF569E9193033B70085EF05 /* Parse.framework in Frameworks */,
 				8DF569B11930321A0085EF05 /* Foundation.framework in Frameworks */,
+				481F9814F2404F238DC81687 /* libPods.a in Frameworks */,
+				8DF569F4193036640085EF05 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +141,7 @@
 				8DF569D51930321A0085EF05 /* RTTests */,
 				8DF569AF1930321A0085EF05 /* Frameworks */,
 				8DF569AE1930321A0085EF05 /* Products */,
+				2E6C3F48934345D6B5FCAFFD /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +157,26 @@
 		8DF569AF1930321A0085EF05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DF56A1619304C070085EF05 /* AdSupport.framework */,
+				8DF56A1419304BC20085EF05 /* iAd.framework */,
+				8DF56A09193037720085EF05 /* QuartzCore.framework */,
+				8DF56A071930376C0085EF05 /* MobileCoreServices.framework */,
+				8DF56A05193037650085EF05 /* CoreLocation.framework */,
+				8DF56A031930374A0085EF05 /* CFNetwork.framework */,
+				8DF56A011930373F0085EF05 /* AudioToolbox.framework */,
+				8DF569FF193037040085EF05 /* StoreKit.framework */,
+				8DF569FD193036F80085EF05 /* libz.1.1.3.dylib */,
+				8DF569FB193036EA0085EF05 /* Security.framework */,
+				8DF569F9193036D80085EF05 /* SystemConfiguration.framework */,
+				8DF569F71930367C0085EF05 /* Accounts.framework */,
+				8DF569F5193036770085EF05 /* Social.framework */,
+				8DF569F3193036640085EF05 /* FacebookSDK.framework */,
+				8DF569E8193033B70085EF05 /* Parse.framework */,
 				8DF569B01930321A0085EF05 /* Foundation.framework */,
 				8DF569B21930321A0085EF05 /* CoreGraphics.framework */,
 				8DF569B41930321A0085EF05 /* UIKit.framework */,
 				8DF569CF1930321A0085EF05 /* XCTest.framework */,
+				DE83BFD06E1941738224FFF6 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,8 +187,12 @@
 				8DF569BF1930321A0085EF05 /* AppDelegate.h */,
 				8DF569C01930321A0085EF05 /* AppDelegate.m */,
 				8DF569C21930321A0085EF05 /* Main.storyboard */,
-				8DF569C51930321A0085EF05 /* ViewController.h */,
-				8DF569C61930321A0085EF05 /* ViewController.m */,
+				8DF56A11193045AB0085EF05 /* MenuViewController.h */,
+				8DF56A12193045AB0085EF05 /* MenuViewController.m */,
+				8DF56A0B19303D050085EF05 /* LocationViewController.h */,
+				8DF56A0C19303D050085EF05 /* LocationViewController.m */,
+				8DF569E51930336F0085EF05 /* RestaurantViewController.h */,
+				8DF569E61930336F0085EF05 /* RestaurantViewController.m */,
 				8DF569C81930321A0085EF05 /* Images.xcassets */,
 				8DF569B71930321A0085EF05 /* Supporting Files */,
 			);
@@ -159,9 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DF569DF1930321A0085EF05 /* Build configuration list for PBXNativeTarget "RT" */;
 			buildPhases = (
+				FFCEF55745D04A4F88E7E8EF /* Check Pods Manifest.lock */,
 				8DF569A91930321A0085EF05 /* Sources */,
 				8DF569AA1930321A0085EF05 /* Frameworks */,
 				8DF569AB1930321A0085EF05 /* Resources */,
+				E14C7A13674447BBA5F859AD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,14 +322,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E14C7A13674447BBA5F859AD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFCEF55745D04A4F88E7E8EF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8DF569A91930321A0085EF05 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DF569C71930321A0085EF05 /* ViewController.m in Sources */,
+				8DF569E71930336F0085EF05 /* RestaurantViewController.m in Sources */,
 				8DF569C11930321A0085EF05 /* AppDelegate.m in Sources */,
 				8DF569BD1930321A0085EF05 /* main.m in Sources */,
+				8DF56A0D19303D050085EF05 /* LocationViewController.m in Sources */,
+				8DF56A13193045AB0085EF05 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,9 +486,14 @@
 		};
 		8DF569E01930321A0085EF05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E6C3F48934345D6B5FCAFFD /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RT/RT-Prefix.pch";
 				INFOPLIST_FILE = "RT/RT-Info.plist";
@@ -386,9 +504,14 @@
 		};
 		8DF569E11930321A0085EF05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E6C3F48934345D6B5FCAFFD /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RT/RT-Prefix.pch";
 				INFOPLIST_FILE = "RT/RT-Info.plist";
@@ -457,6 +580,7 @@
 				8DF569E11930321A0085EF05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DF569E21930321A0085EF05 /* Build configuration list for PBXNativeTarget "RTTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +589,7 @@
 				8DF569E41930321A0085EF05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

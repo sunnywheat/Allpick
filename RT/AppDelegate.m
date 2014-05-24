@@ -6,13 +6,59 @@
 //  Copyright (c) 2014 telerik. All rights reserved.
 //
 
+
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
+#import "Colours.h"
+#import <Mixpanel.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // Define color.
+    UIColor *barTintColor = [UIColor black25PercentColor];
+    UIColor *tintColor = [UIColor whiteColor];
+    
+    [[UINavigationBar appearance] setBarTintColor:barTintColor];
+    [[UITabBar appearance] setTintColor:barTintColor];
+    // White or black
+    [[UINavigationBar appearance] setTintColor:tintColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : tintColor}];
+    // Set status bar style
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    // Parse.com
+    [Parse setApplicationId:@"k0QlMNHfsjaER2oY0DlZI7nB9B0xs2kgDpPcicDe"
+                  clientKey:@"mEOp2cVa2wCZtWSHqVlTpeXdQIps8w3O88oUzT6c"];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    // Test Parse.com
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
+    
+    NSDictionary *dimensions = @{
+                                 // What type of news is this?
+                                 @"category": @"politics",
+                                 // Is it a weekday or the weekend?
+                                 @"dayType": @"weekday",
+                                 };
+    // Send the dimensions to Parse along with the 'read' event
+    
+    [PFAnalytics trackEvent:@"read" dimensions:dimensions];
+    
+    // Mixpanel
+    [Mixpanel sharedInstanceWithToken:@"0e27a8b5b6dcf19dba41a6c118a1d354"];
+    
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    // Track an event in Mixpanel Engagement
+    [mixpanel identify:[[UIDevice currentDevice] name]];
+    [mixpanel.people set:@{@"Plan": @"Early Version"}];
+    
     return YES;
 }
 							
