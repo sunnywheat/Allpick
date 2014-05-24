@@ -393,6 +393,7 @@
 				GCC_PREFIX_HEADER = "RT/RT-Prefix.pch";
 				INFOPLIST_FILE = "RT/RT-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "CB880AEA-2137-4000-B5CD-301BC8E32A06";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
