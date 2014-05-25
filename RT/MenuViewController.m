@@ -7,8 +7,10 @@
 //
 
 #import "MenuViewController.h"
+#import "MenuListTableViewController.h"
 
 @interface MenuViewController ()
+@property (nonatomic, strong) MenuListTableViewController *childViewController;
 
 @end
 
@@ -27,13 +29,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.childViewController = (MenuListTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MenuListTableViewController"];
+    [self addChildViewController:self.childViewController];
+    [self.view addSubview:self.childViewController.view];
+    [self.childViewController didMoveToParentViewController:self];    
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.childViewController.view.frame = CGRectMake(0, 150, self.view.frame.size.width, self.view.frame.size.height - 300);
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 #pragma mark - Navigation
