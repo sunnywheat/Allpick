@@ -7,6 +7,7 @@
 //
 
 #import "MenuListTableViewController.h"
+#import <Colours.h>
 
 @interface MenuListTableViewController ()
 
@@ -94,6 +95,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     UILabel *nameLabel = (UILabel *) [cell viewWithTag:100];
     nameLabel.text = [object objectForKey:@"name"];
     
@@ -106,8 +109,10 @@
     // add button
     UIButton *addDishButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     addDishButton.tag = indexPath.row;
-    addDishButton.frame = CGRectMake(100.0f, 5.0f, 75.0f, 30.0f);
+    addDishButton.frame = CGRectMake(88.0f, 5.0f, 75.0f, 30.0f);
     [addDishButton setTitle:@"Add" forState:UIControlStateNormal];
+    [addDishButton setBackgroundColor:[UIColor black25PercentColor]];
+    [addDishButton setTintColor:[UIColor whiteColor]];
     [cell addSubview:addDishButton];
     [addDishButton addTarget:self
                       action:@selector(addDish:)
@@ -118,6 +123,8 @@
     minusDishButton.tag = indexPath.row;
     minusDishButton.frame = CGRectMake(250.0f, 5.0f, 75.0f, 30.0f);
     [minusDishButton setTitle:@"Delete" forState:UIControlStateNormal];
+    [minusDishButton setBackgroundColor:[UIColor black25PercentColor]];
+    [minusDishButton setTintColor:[UIColor whiteColor]];
     [cell addSubview:minusDishButton];
     [minusDishButton addTarget:self
                         action:@selector(minusDish:)
