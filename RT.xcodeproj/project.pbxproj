@@ -40,6 +40,9 @@
 		8DF56A1519304BC20085EF05 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF56A1419304BC20085EF05 /* iAd.framework */; };
 		8DF56A1719304C070085EF05 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF56A1619304C070085EF05 /* AdSupport.framework */; };
 		8DF56A1A193280DE0085EF05 /* MenuListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF56A19193280DE0085EF05 /* MenuListTableViewController.m */; };
+		8DF56A231932A6C70085EF05 /* Allpick.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8DF56A211932A6C70085EF05 /* Allpick.xcdatamodeld */; };
+		8DF56A261932A6F10085EF05 /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF56A251932A6F10085EF05 /* Cart.m */; };
+		8DF56A281932A7660085EF05 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF56A271932A7660085EF05 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +97,10 @@
 		8DF56A1619304C070085EF05 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8DF56A18193280DE0085EF05 /* MenuListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuListTableViewController.h; sourceTree = "<group>"; };
 		8DF56A19193280DE0085EF05 /* MenuListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListTableViewController.m; sourceTree = "<group>"; };
+		8DF56A221932A6C70085EF05 /* Allpick.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Allpick.xcdatamodel; sourceTree = "<group>"; };
+		8DF56A241932A6F10085EF05 /* Cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cart.h; sourceTree = "<group>"; };
+		8DF56A251932A6F10085EF05 /* Cart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cart.m; sourceTree = "<group>"; };
+		8DF56A271932A7660085EF05 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DE83BFD06E1941738224FFF6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DF56A281932A7660085EF05 /* CoreData.framework in Frameworks */,
 				8DF56A1719304C070085EF05 /* AdSupport.framework in Frameworks */,
 				8DF56A1519304BC20085EF05 /* iAd.framework in Frameworks */,
 				8DF56A0A193037720085EF05 /* QuartzCore.framework in Frameworks */,
@@ -160,6 +168,7 @@
 		8DF569AF1930321A0085EF05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DF56A271932A7660085EF05 /* CoreData.framework */,
 				8DF56A1619304C070085EF05 /* AdSupport.framework */,
 				8DF56A1419304BC20085EF05 /* iAd.framework */,
 				8DF56A09193037720085EF05 /* QuartzCore.framework */,
@@ -190,6 +199,9 @@
 				8DF569BF1930321A0085EF05 /* AppDelegate.h */,
 				8DF569C01930321A0085EF05 /* AppDelegate.m */,
 				8DF569C21930321A0085EF05 /* Main.storyboard */,
+				8DF56A211932A6C70085EF05 /* Allpick.xcdatamodeld */,
+				8DF56A241932A6F10085EF05 /* Cart.h */,
+				8DF56A251932A6F10085EF05 /* Cart.m */,
 				8DF56A18193280DE0085EF05 /* MenuListTableViewController.h */,
 				8DF56A19193280DE0085EF05 /* MenuListTableViewController.m */,
 				8DF56A11193045AB0085EF05 /* MenuViewController.h */,
@@ -367,6 +379,8 @@
 			files = (
 				8DF569E71930336F0085EF05 /* RestaurantViewController.m in Sources */,
 				8DF569C11930321A0085EF05 /* AppDelegate.m in Sources */,
+				8DF56A231932A6C70085EF05 /* Allpick.xcdatamodeld in Sources */,
+				8DF56A261932A6F10085EF05 /* Cart.m in Sources */,
 				8DF569BD1930321A0085EF05 /* main.m in Sources */,
 				8DF56A0D19303D050085EF05 /* LocationViewController.m in Sources */,
 				8DF56A1A193280DE0085EF05 /* MenuListTableViewController.m in Sources */,
@@ -598,6 +612,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8DF56A211932A6C70085EF05 /* Allpick.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8DF56A221932A6C70085EF05 /* Allpick.xcdatamodel */,
+			);
+			currentVersion = 8DF56A221932A6C70085EF05 /* Allpick.xcdatamodel */;
+			path = Allpick.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8DF569A51930321A0085EF05 /* Project object */;
 }
