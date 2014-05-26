@@ -57,7 +57,7 @@
 
 /* Begin PBXFileReference section */
 		2E6C3F48934345D6B5FCAFFD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		8DF569AD1930321A0085EF05 /* RT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DF569AD1930321A0085EF05 /* Allpick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Allpick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF569B01930321A0085EF05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8DF569B21930321A0085EF05 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8DF569B41930321A0085EF05 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -159,7 +159,7 @@
 		8DF569AE1930321A0085EF05 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8DF569AD1930321A0085EF05 /* RT.app */,
+				8DF569AD1930321A0085EF05 /* Allpick.app */,
 				8DF569CE1930321A0085EF05 /* RTTests.xctest */,
 			);
 			name = Products;
@@ -264,7 +264,7 @@
 			);
 			name = RT;
 			productName = RT;
-			productReference = 8DF569AD1930321A0085EF05 /* RT.app */;
+			productReference = 8DF569AD1930321A0085EF05 /* Allpick.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8DF569CD1930321A0085EF05 /* RTTests */ = {
@@ -517,7 +517,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RT/RT-Prefix.pch";
 				INFOPLIST_FILE = "RT/RT-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Allpick;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -535,7 +535,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RT/RT-Prefix.pch";
 				INFOPLIST_FILE = "RT/RT-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Allpick;
 				PROVISIONING_PROFILE = "CB880AEA-2137-4000-B5CD-301BC8E32A06";
 				WRAPPER_EXTENSION = app;
 			};

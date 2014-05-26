@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "MenuListTableViewController.h"
 
+@class MenuViewController;
+
 @interface MenuViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet UILabel *test2;
 
 @end

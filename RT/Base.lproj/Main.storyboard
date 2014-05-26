@@ -130,7 +130,7 @@
         <!--Menu View Controller - Menu-->
         <scene sceneID="2ZR-JL-Qis">
             <objects>
-                <viewController id="PrE-6H-O8R" customClass="MenuViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PrE-6H-O8R" customClass="MenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e7Y-Be-yJ3"/>
                         <viewControllerLayoutGuide type="bottom" id="cug-VV-Rfs"/>
@@ -155,7 +155,13 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN0-5u-hDU">
-                                <rect key="frame" x="20" y="88" width="280" height="21"/>
+                                <rect key="frame" x="20" y="88" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TQ-mr-gZk">
+                                <rect key="frame" x="174" y="88" width="107" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -166,6 +172,7 @@
                     <navigationItem key="navigationItem" title="Menu" id="4Lz-YO-Tdt"/>
                     <connections>
                         <outlet property="cartLabel" destination="xN0-5u-hDU" id="l1H-Sz-185"/>
+                        <outlet property="test2" destination="2TQ-mr-gZk" id="NC5-HY-Bi1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIg-Vu-V0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
