@@ -26,8 +26,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        menuListTableViewController = [[MenuListTableViewController alloc] init];
-        [menuListTableViewController setDelegate:self];
     }
     return self;
 }
@@ -38,9 +36,14 @@
     // Do any additional setup after loading the view.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.childViewController = (MenuListTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MenuListTableViewController"];
+    
+    // Wonderful !
+    [self.childViewController setDelegate:self];
+    
     [self addChildViewController:self.childViewController];
     [self.view addSubview:self.childViewController.view];
     [self.childViewController didMoveToParentViewController:self];
+    
 
 }
 
