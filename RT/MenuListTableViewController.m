@@ -7,7 +7,6 @@
 //
 
 #import "MenuListTableViewController.h"
-#import "MenuViewController.h"
 #import <Colours.h>
 
 #import "CartSummary.h"
@@ -52,6 +51,10 @@
     labelView.text = @"hello";
     [headerView addSubview:labelView];
     self.tableView.tableHeaderView = headerView;
+    
+    menuViewController = [[MenuViewController alloc] init];
+    [menuViewController setDelegate:self];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -148,6 +151,8 @@
     [CartSummary setSomeData:@"Finally"];
     
     NSLog(@"Singleton: %@", [CartSummary getSomeData]);
+    
+    [menuViewController fetchingText];
 
 }
 
@@ -155,6 +160,11 @@
     
 }
 
+#pragma mark -
+-(void) updateCartSummary:(MenuViewController *)f fetchedText:(NSString *)s {
+    NSLog(@"updat cart summary. %@", s);
+    
+}
 
 /*
 // Override to support conditional editing of the table view.

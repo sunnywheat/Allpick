@@ -7,6 +7,12 @@
 //
 
 #import "MenuViewController.h"
+#import "MenuListTableViewController.h"
+#import <dispatch/dispatch.h>
+
+
+#import <stdlib.h>
+#import <unistd.h>
 
 @interface MenuViewController ()
 @property (nonatomic, strong) MenuListTableViewController *childViewController;
@@ -15,6 +21,8 @@
 @end
 
 @implementation MenuViewController
+
+@synthesize delegate;
 
 @synthesize test2;
 
@@ -66,7 +74,22 @@
     self.title = @"";
 }
 
-
+-(void)fetchingText
+{
+    [self.delegate updateCartSummary:self fetchedText:@"great"];
+    
+    NSLog(@"finally, here it is.");
+    self.cartLabel.text = @"finally";
+    [_cartLabel setText:@"Why"];
+    
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        self.cartLabel.text = @"finally";
+    });
+    
+    
+}
 
 
 @end

@@ -7,12 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MenuListTableViewController.h"
+#import <Foundation/Foundation.h>
 
 @class MenuViewController;
+
+@protocol MenuViewControllerDelegate <NSObject>
+
+-(void)updateCartSummary: (MenuViewController *)f
+             fetchedText: (NSString *)s;
+
+@end
+
 
 @interface MenuViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *test2;
+
+@property (nonatomic, weak) id<MenuViewControllerDelegate> delegate;
+
+
+-(void) fetchingText;
+
 
 @end
