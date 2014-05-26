@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8DF569AC1930321A0085EF05"
-               BuildableName = "RT.app"
+               BuildableName = "Allpick.app"
                BlueprintName = "RT"
                ReferencedContainer = "container:RT.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8DF569AC1930321A0085EF05"
-            BuildableName = "RT.app"
+            BuildableName = "Allpick.app"
             BlueprintName = "RT"
             ReferencedContainer = "container:RT.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8DF569AC1930321A0085EF05"
-            BuildableName = "RT.app"
+            BuildableName = "Allpick.app"
             BlueprintName = "RT"
             ReferencedContainer = "container:RT.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8DF569AC1930321A0085EF05"
-            BuildableName = "RT.app"
+            BuildableName = "Allpick.app"
             BlueprintName = "RT"
             ReferencedContainer = "container:RT.xcodeproj">
          </BuildableReference>

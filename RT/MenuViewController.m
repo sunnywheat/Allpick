@@ -21,9 +21,6 @@
 
 @implementation MenuViewController
 
-
-@synthesize test2;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -44,9 +41,6 @@
     [self addChildViewController:self.childViewController];
     [self.view addSubview:self.childViewController.view];
     [self.childViewController didMoveToParentViewController:self];
-
-    self.cartLabel.text = [NSString stringWithFormat:@"The cart is: %@", self.childViewController.cart];
-
 
 }
 
@@ -79,8 +73,7 @@
 
 #pragma mark -
 -(void) updateCartSummary:(MenuListTableViewController *)f fetchedText:(NSString *)s {
-    NSLog(@"updat cart summary. %@", s);
-    self.cartLabel.text = @"great.";
+    self.cartLabel.text = s;
 }
 
 @end

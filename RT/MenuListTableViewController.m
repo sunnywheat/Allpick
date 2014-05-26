@@ -8,10 +8,9 @@
 
 #import "MenuListTableViewController.h"
 #import <Colours.h>
-
+#import "CartSummary.h"
 #import "MenuViewController.h"
 
-#import "CartSummary.h"
 
 @interface MenuListTableViewController ()
 
@@ -52,8 +51,9 @@
     [super viewDidLoad];
     
     
-    
+    self.cart = [[NSMutableDictionary alloc] init];
     delegate = self.parentViewController;
+    
     // delegate = (id)self;
     
     // Uncomment the following line to preserve selection between presentations.
@@ -131,6 +131,8 @@
                       action:@selector(addDish:)
             forControlEvents:UIControlEventTouchUpInside];
     
+    
+    
     // minus button
     UIButton *minusDishButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     minusDishButton.tag = indexPath.row;
@@ -146,28 +148,60 @@
     return cell;
 }
 
-- (IBAction)addDish:(id)sender {
-    [self.cart setObject:@"test" forKey:@"this is a"];
+- (void)addDish: (UIButton*) sender {
+    PFObject* selectedDish = [self.objects objectAtIndex:sender.tag];
+    NSString* dishName = [selectedDish objectForKey:@"name"];
+    NSNumber* i = @0;
     
-    [CartSummary setSomeData:@"Finally"];
-    
-    NSLog(@"Singleton: %@", [CartSummary getSomeData]);
-    
-    [self fetchingText];
+    if (![self.cart objectForKey:dishName]) {
+        [self.cart setValue:@1 forKey:dishName];
+    }
+    else {
+        i = @([[self.cart valueForKey:dishName] integerValue]+1);
+        [self.cart setValue:i forKey:dishName];
+    }
 
+    [self fetchingText];
 }
 
-- (IBAction)minusDish:(id)sender {
+- (void)minusDish:(UIButton*) sender {
+    PFObject* selectedDish = [self.objects objectAtIndex:sender.tag];
+    NSString* dishName = [selectedDish objectForKey:@"name"];
+    NSNumber* i = @0;
+    
+    if (![self.cart objectForKey:dishName]) {
+
+    }
+    else {
+        i = @([[self.cart valueForKey:dishName] integerValue]-1);
+        if ([i integerValue] == 0) {
+            [self.cart   removeObjectForKey:dishName];
+        }
+        else {
+            [self.cart setValue:i forKey:dishName];
+        }
+    }
+    
+    [self fetchingText];
     
 }
 
 -(void)fetchingText
 {
-    if ([delegate respondsToSelector:@selector(updateCartSummary:fetchedText:)]) {
-        [delegate updateCartSummary:self fetchedText:@"great"];
+    NSLog(@"Singleton: %@", [CartSummary getSomeData]);
+    
+    NSMutableString *tempCart = [[NSMutableString alloc] initWithString:@"ORDER "];
+    for (id key in self.cart) {
+        [tempCart appendFormat:@"%@: %i, ", key, [[self.cart objectForKey:key] integerValue]];
     }
     
-    NSLog(@"finally, here it is.");
+    NSString* cartSummary = [NSMutableString stringWithFormat:@"%@pick up location: %@.", tempCart, [CartSummary getSomeData]];
+    
+    NSLog(@"%@", self.cart);
+    
+    if ([delegate respondsToSelector:@selector(updateCartSummary:fetchedText:)]) {
+        [delegate updateCartSummary:self fetchedText:cartSummary];
+    }
 }
 
 /*

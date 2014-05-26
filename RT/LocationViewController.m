@@ -7,6 +7,7 @@
 //
 
 #import "LocationViewController.h"
+#import "CartSummary.h"
 
 @interface LocationViewController ()
 
@@ -37,10 +38,12 @@
 }
 
 - (IBAction)physicsBuilding:(id)sender {
+    [CartSummary setSomeData:@"Physics Building"];
     [self performSegueWithIdentifier: @"moveToMenu" sender: self];
 }
 
 - (IBAction)hawkinsHall:(id)sender {
+    [CartSummary setSomeData:@"Hawkins Hall"];
     [self performSegueWithIdentifier: @"moveToMenu" sender: self];
     
 }

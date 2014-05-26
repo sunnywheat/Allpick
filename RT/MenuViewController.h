@@ -19,7 +19,4 @@
 }
 
 
-@property (strong, nonatomic) IBOutlet UILabel *test2;
-
-
 @end
