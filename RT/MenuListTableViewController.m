@@ -9,6 +9,8 @@
 #import "MenuListTableViewController.h"
 #import <Colours.h>
 
+#import "MenuViewController.h"
+
 #import "CartSummary.h"
 
 @interface MenuListTableViewController ()
@@ -17,12 +19,15 @@
 
 @implementation MenuListTableViewController
 
+@synthesize delegate;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -46,14 +51,10 @@
 {
     [super viewDidLoad];
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 50)];
-    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, self.view.frame.size.width, 50)];
-    labelView.text = @"hello";
-    [headerView addSubview:labelView];
-    self.tableView.tableHeaderView = headerView;
     
-    menuViewController = [[MenuViewController alloc] init];
-    [menuViewController setDelegate:self];
+    
+    delegate = self.parentViewController;
+    // delegate = (id)self;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -152,7 +153,7 @@
     
     NSLog(@"Singleton: %@", [CartSummary getSomeData]);
     
-    [menuViewController fetchingText];
+    [self fetchingText];
 
 }
 
@@ -160,10 +161,13 @@
     
 }
 
-#pragma mark -
--(void) updateCartSummary:(MenuViewController *)f fetchedText:(NSString *)s {
-    NSLog(@"updat cart summary. %@", s);
+-(void)fetchingText
+{
+    if ([delegate respondsToSelector:@selector(updateCartSummary:fetchedText:)]) {
+        [delegate updateCartSummary:self fetchedText:@"great"];
+    }
     
+    NSLog(@"finally, here it is.");
 }
 
 /*

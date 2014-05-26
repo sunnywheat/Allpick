@@ -7,9 +7,8 @@
 //
 
 #import "MenuViewController.h"
-#import "MenuListTableViewController.h"
 #import <dispatch/dispatch.h>
-
+#import "MenuListTableViewController.h"
 
 #import <stdlib.h>
 #import <unistd.h>
@@ -22,7 +21,6 @@
 
 @implementation MenuViewController
 
-@synthesize delegate;
 
 @synthesize test2;
 
@@ -31,6 +29,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        menuListTableViewController = [[MenuListTableViewController alloc] init];
+        [menuListTableViewController setDelegate:self];
     }
     return self;
 }
@@ -46,6 +46,7 @@
     [self.childViewController didMoveToParentViewController:self];
 
     self.cartLabel.text = [NSString stringWithFormat:@"The cart is: %@", self.childViewController.cart];
+
 
 }
 
@@ -74,22 +75,12 @@
     self.title = @"";
 }
 
--(void)fetchingText
-{
-    [self.delegate updateCartSummary:self fetchedText:@"great"];
-    
-    NSLog(@"finally, here it is.");
-    self.cartLabel.text = @"finally";
-    [_cartLabel setText:@"Why"];
-    
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        self.cartLabel.text = @"finally";
-    });
-    
-    
-}
 
+
+#pragma mark -
+-(void) updateCartSummary:(MenuListTableViewController *)f fetchedText:(NSString *)s {
+    NSLog(@"updat cart summary. %@", s);
+    self.cartLabel.text = @"great.";
+}
 
 @end

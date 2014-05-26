@@ -8,15 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import "MenuViewController.h"
 
 
-@interface MenuListTableViewController : PFQueryTableViewController <UITableViewDelegate, MenuViewControllerDelegate>
-{
-    @private
-    MenuViewController *menuViewController;
-}
+@class MenuListTableViewController;
+
+@protocol MenuListTableViewControllerDelegate <NSObject>
+
+-(void)updateCartSummary: (MenuListTableViewController *)f
+             fetchedText: (NSString *)s;
+
+@end
+
+@interface MenuListTableViewController : PFQueryTableViewController <UITableViewDelegate>
+
 
 @property (nonatomic, strong) NSMutableDictionary *cart;
+
+@property (nonatomic, assign) id<MenuListTableViewControllerDelegate> delegate;
+
+-(void) fetchingText;
 
 @end
