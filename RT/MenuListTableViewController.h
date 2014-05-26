@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
+
 @interface MenuListTableViewController : PFQueryTableViewController <UITableViewDelegate>
+
+@property (nonatomic, strong) NSMutableDictionary *cart;
 
 @end

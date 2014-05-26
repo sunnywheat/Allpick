@@ -7,10 +7,10 @@
 //
 
 #import "MenuViewController.h"
-#import "MenuListTableViewController.h"
 
 @interface MenuViewController ()
 @property (nonatomic, strong) MenuListTableViewController *childViewController;
+@property (strong, nonatomic) IBOutlet UILabel *cartLabel;
 
 @end
 
@@ -33,8 +33,13 @@
     self.childViewController = (MenuListTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MenuListTableViewController"];
     [self addChildViewController:self.childViewController];
     [self.view addSubview:self.childViewController.view];
-    [self.childViewController didMoveToParentViewController:self];    
+    [self.childViewController didMoveToParentViewController:self];
+
+    self.cartLabel.text = [NSString stringWithFormat:@"The cart is: %@", self.childViewController.cart];
+
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated {
     self.childViewController.view.frame = CGRectMake(0, 150, self.view.frame.size.width, self.view.frame.size.height - 300);
@@ -58,6 +63,8 @@
     // Pass the selected object to the new view controller.
     self.title = @"";
 }
+
+
 
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MenuListTableViewController.h"
+#import "MenuViewController.h"
 #import <Colours.h>
 
 @interface MenuListTableViewController ()
@@ -14,6 +15,7 @@
 @end
 
 @implementation MenuListTableViewController
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -134,7 +136,8 @@
 }
 
 - (IBAction)addDish:(id)sender {
-    
+    [self.cart setObject:@"test" forKey:@"this is a"];
+
 }
 
 - (IBAction)minusDish:(id)sender {
