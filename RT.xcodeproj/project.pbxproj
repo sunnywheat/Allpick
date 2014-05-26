@@ -43,6 +43,7 @@
 		8DF56A231932A6C70085EF05 /* Allpick.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8DF56A211932A6C70085EF05 /* Allpick.xcdatamodeld */; };
 		8DF56A261932A6F10085EF05 /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF56A251932A6F10085EF05 /* Cart.m */; };
 		8DF56A281932A7660085EF05 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF56A271932A7660085EF05 /* CoreData.framework */; };
+		8DF56A2B1932FC810085EF05 /* CartSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF56A2A1932FC810085EF05 /* CartSummary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		8DF56A241932A6F10085EF05 /* Cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cart.h; sourceTree = "<group>"; };
 		8DF56A251932A6F10085EF05 /* Cart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cart.m; sourceTree = "<group>"; };
 		8DF56A271932A7660085EF05 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8DF56A291932FC810085EF05 /* CartSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartSummary.h; sourceTree = "<group>"; };
+		8DF56A2A1932FC810085EF05 /* CartSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartSummary.m; sourceTree = "<group>"; };
 		DE83BFD06E1941738224FFF6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -202,6 +205,8 @@
 				8DF56A211932A6C70085EF05 /* Allpick.xcdatamodeld */,
 				8DF56A241932A6F10085EF05 /* Cart.h */,
 				8DF56A251932A6F10085EF05 /* Cart.m */,
+				8DF56A291932FC810085EF05 /* CartSummary.h */,
+				8DF56A2A1932FC810085EF05 /* CartSummary.m */,
 				8DF56A18193280DE0085EF05 /* MenuListTableViewController.h */,
 				8DF56A19193280DE0085EF05 /* MenuListTableViewController.m */,
 				8DF56A11193045AB0085EF05 /* MenuViewController.h */,
@@ -379,6 +384,7 @@
 			files = (
 				8DF569E71930336F0085EF05 /* RestaurantViewController.m in Sources */,
 				8DF569C11930321A0085EF05 /* AppDelegate.m in Sources */,
+				8DF56A2B1932FC810085EF05 /* CartSummary.m in Sources */,
 				8DF56A231932A6C70085EF05 /* Allpick.xcdatamodeld in Sources */,
 				8DF56A261932A6F10085EF05 /* Cart.m in Sources */,
 				8DF569BD1930321A0085EF05 /* main.m in Sources */,

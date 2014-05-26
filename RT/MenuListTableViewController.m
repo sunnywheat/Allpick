@@ -10,6 +10,8 @@
 #import "MenuViewController.h"
 #import <Colours.h>
 
+#import "CartSummary.h"
+
 @interface MenuListTableViewController ()
 
 @end
@@ -45,6 +47,11 @@
 {
     [super viewDidLoad];
     
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 50)];
+    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, self.view.frame.size.width, 50)];
+    labelView.text = @"hello";
+    [headerView addSubview:labelView];
+    self.tableView.tableHeaderView = headerView;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -138,7 +145,9 @@
 - (IBAction)addDish:(id)sender {
     [self.cart setObject:@"test" forKey:@"this is a"];
     
+    [CartSummary setSomeData:@"Finally"];
     
+    NSLog(@"Singleton: %@", [CartSummary getSomeData]);
 
 }
 
