@@ -153,11 +153,14 @@
                                     <color key="titleColor" red="0.27450980390000002" green="0.30588235289999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.27450980390000002" green="0.30588235289999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmOrder:" destination="PrE-6H-O8R" eventType="touchUpInside" id="d5M-HV-Fc4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ORDER" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="xN0-5u-hDU">
                                 <rect key="frame" x="15" y="72" width="280" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

@@ -185,19 +185,20 @@
 
 -(void)fetchingText
 {
-    NSLog(@"Singleton: %@", [CartSummary getSomeData]);
-    
     NSMutableString *tempCart = [[NSMutableString alloc] initWithString:@"ORDER "];
     for (id key in self.cart) {
         [tempCart appendFormat:@"%@: %i, ", key, [[self.cart objectForKey:key] integerValue]];
     }
     
+    BOOL tempEmpty = YES;
+    if ([tempCart isEqualToString:@"ORDER "]) {
+        tempEmpty = NO;
+    }
+        
     NSString* cartSummary = [NSMutableString stringWithFormat:@"%@pick up location: %@.", tempCart, [CartSummary getSomeData]];
     
-    NSLog(@"%@", self.cart);
-    
-    if ([delegate respondsToSelector:@selector(updateCartSummary:fetchedText:)]) {
-        [delegate updateCartSummary:self fetchedText:cartSummary];
+    if ([delegate respondsToSelector:@selector(updateCartSummary:fetchedText:notEmpty:)]) {
+        [delegate updateCartSummary:self fetchedText:cartSummary notEmpty:tempEmpty];
     }
 }
 

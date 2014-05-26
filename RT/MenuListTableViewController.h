@@ -15,7 +15,9 @@
 @protocol MenuListTableViewControllerDelegate <NSObject>
 
 -(void)updateCartSummary: (MenuListTableViewController *)f
-             fetchedText: (NSString *)s;
+             fetchedText: (NSString *)cart
+                notEmpty: (BOOL) ready;
+
 
 @end
 
