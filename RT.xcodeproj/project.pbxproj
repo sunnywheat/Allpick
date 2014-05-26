@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		481F9814F2404F238DC81687 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE83BFD06E1941738224FFF6 /* libPods.a */; };
+		8D3AC9A71933E90500403B95 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8D3AC9A41933E90500403B95 /* SVProgressHUD.bundle */; };
+		8D3AC9A81933E90500403B95 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3AC9A61933E90500403B95 /* SVProgressHUD.m */; };
 		8DF569B11930321A0085EF05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569B01930321A0085EF05 /* Foundation.framework */; };
 		8DF569B31930321A0085EF05 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569B21930321A0085EF05 /* CoreGraphics.framework */; };
 		8DF569B51930321A0085EF05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569B41930321A0085EF05 /* UIKit.framework */; };
@@ -58,6 +60,9 @@
 
 /* Begin PBXFileReference section */
 		2E6C3F48934345D6B5FCAFFD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		8D3AC9A41933E90500403B95 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		8D3AC9A51933E90500403B95 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		8D3AC9A61933E90500403B95 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		8DF569AD1930321A0085EF05 /* Allpick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Allpick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF569B01930321A0085EF05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8DF569B21930321A0085EF05 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,10 +117,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DF56A0A193037720085EF05 /* QuartzCore.framework in Frameworks */,
 				8DF56A281932A7660085EF05 /* CoreData.framework in Frameworks */,
 				8DF56A1719304C070085EF05 /* AdSupport.framework in Frameworks */,
 				8DF56A1519304BC20085EF05 /* iAd.framework in Frameworks */,
-				8DF56A0A193037720085EF05 /* QuartzCore.framework in Frameworks */,
 				8DF56A081930376C0085EF05 /* MobileCoreServices.framework in Frameworks */,
 				8DF56A06193037650085EF05 /* CoreLocation.framework in Frameworks */,
 				8DF569B31930321A0085EF05 /* CoreGraphics.framework in Frameworks */,
@@ -148,6 +153,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D3AC9A91933E9A000403B95 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8D3AC9A41933E90500403B95 /* SVProgressHUD.bundle */,
+				8D3AC9A51933E90500403B95 /* SVProgressHUD.h */,
+				8D3AC9A61933E90500403B95 /* SVProgressHUD.m */,
+			);
+			name = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		8DF569A41930321A0085EF05 = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +214,7 @@
 		8DF569B61930321A0085EF05 /* RT */ = {
 			isa = PBXGroup;
 			children = (
+				8D3AC9A91933E9A000403B95 /* SVProgressHUD */,
 				8DF569BF1930321A0085EF05 /* AppDelegate.h */,
 				8DF569C01930321A0085EF05 /* AppDelegate.m */,
 				8DF569C21930321A0085EF05 /* Main.storyboard */,
@@ -331,6 +347,7 @@
 				8DF569C91930321A0085EF05 /* Images.xcassets in Resources */,
 				8DF569BB1930321A0085EF05 /* InfoPlist.strings in Resources */,
 				8DF569C41930321A0085EF05 /* Main.storyboard in Resources */,
+				8D3AC9A71933E90500403B95 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +406,7 @@
 				8DF56A261932A6F10085EF05 /* Cart.m in Sources */,
 				8DF569BD1930321A0085EF05 /* main.m in Sources */,
 				8DF56A0D19303D050085EF05 /* LocationViewController.m in Sources */,
+				8D3AC9A81933E90500403B95 /* SVProgressHUD.m in Sources */,
 				8DF56A1A193280DE0085EF05 /* MenuListTableViewController.m in Sources */,
 				8DF56A13193045AB0085EF05 /* MenuViewController.m in Sources */,
 			);

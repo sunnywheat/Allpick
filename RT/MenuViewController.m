@@ -9,9 +9,8 @@
 #import "MenuViewController.h"
 #import <dispatch/dispatch.h>
 #import "MenuListTableViewController.h"
-
-#import <stdlib.h>
-#import <unistd.h>
+#import <Parse/Parse.h>
+#import "SVProgressHUD.h"
 
 @interface MenuViewController ()
 @property (nonatomic, strong) MenuListTableViewController *childViewController;
@@ -35,7 +34,7 @@
 {
     [super viewDidLoad];
     
-    self.cartIsReady = YES;
+    self.cartIsReady = NO;
     
     // Do any additional setup after loading the view.
     self.childViewController = (MenuListTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"MenuListTableViewController"];
@@ -64,9 +63,54 @@
 - (IBAction)confirmOrder:(id)sender {
     if (self.cartIsReady) {
         NSLog(@"Thank you.");
+        UIAlertView *confirmOrderAlert = [[UIAlertView alloc] initWithTitle:@"Your Cart" message:self.cartLabel.text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
+        [confirmOrderAlert setTag:1];
+        [confirmOrderAlert show];
     }
     else {
         NSLog(@"make more");
+        UIAlertView *continueAlert = [[UIAlertView alloc] initWithTitle:@"Your Cart" message:@"Please make an order. The cart is empty." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+        [continueAlert setTag:2];
+        [continueAlert show];
+    }
+}
+
+
+- (void) saveCartToParse {
+    [SVProgressHUD show];
+    PFObject *orderPFObject = [PFObject objectWithClassName:@"Orders"];
+    orderPFObject[@"order"] = self.cartLabel.text;
+    [orderPFObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"succeeded.");
+            [SVProgressHUD dismiss];
+        }
+    }];
+    
+}
+
+#pragma mark - UIAlertView
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 1) {
+        switch (buttonIndex) {
+            case 0:
+                break;
+            case 1:
+                [self saveCartToParse];
+                break;
+            default:
+                break;
+        }
+    }
+    else if (alertView.tag == 2) {
+        switch (buttonIndex) {
+            case 0:
+                NSLog(@"Confirm");
+                break;
+            default:
+                break;
+        }
     }
 }
 
@@ -83,7 +127,7 @@
 
 
 
-#pragma mark -
+#pragma mark - MenuListTableViewController delegate
 -(void) updateCartSummary:(MenuListTableViewController *)f fetchedText:(NSString *)cart notEmpty:(BOOL)ready{
     dispatch_async(dispatch_get_main_queue(), ^{
         self.cartLabel.text = cart;

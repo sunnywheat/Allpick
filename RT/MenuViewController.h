@@ -12,7 +12,7 @@
 
 @class MenuListTableViewController;
 
-@interface MenuViewController : UIViewController <MenuListTableViewControllerDelegate>
+@interface MenuViewController : UIViewController <MenuListTableViewControllerDelegate, UIAlertViewDelegate>
 {
     @private
     MenuListTableViewController *menuListTableViewController;

@@ -40,10 +40,12 @@
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    /*
     // Test Parse.com
     PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     testObject[@"foo"] = @"bar";
     [testObject saveInBackground];
+    */
     
     NSDictionary *dimensions = @{
                                  // What type of news is this?
