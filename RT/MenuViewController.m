@@ -60,6 +60,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 - (IBAction)confirmOrder:(id)sender {
     if (self.cartIsReady) {
         NSLog(@"Thank you.");
@@ -80,9 +82,13 @@
     [SVProgressHUD show];
     PFObject *orderPFObject = [PFObject objectWithClassName:@"Orders"];
     orderPFObject[@"order"] = self.cartLabel.text;
+    orderPFObject[@"ID"] = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     [orderPFObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"succeeded.");
+            
+            [self performSegueWithIdentifier:@"moveToRestaurant" sender:self];
+            
             [SVProgressHUD dismiss];
         }
     }];

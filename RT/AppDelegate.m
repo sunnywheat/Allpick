@@ -47,6 +47,7 @@
     [testObject saveInBackground];
     */
     
+    /*
     NSDictionary *dimensions = @{
                                  // What type of news is this?
                                  @"category": @"politics",
@@ -56,6 +57,8 @@
     // Send the dimensions to Parse along with the 'read' event
     
     [PFAnalytics trackEvent:@"read" dimensions:dimensions];
+    */
+    
     
     // Mixpanel
     [Mixpanel sharedInstanceWithToken:@"0e27a8b5b6dcf19dba41a6c118a1d354"];

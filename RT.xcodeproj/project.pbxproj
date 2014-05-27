@@ -10,6 +10,7 @@
 		481F9814F2404F238DC81687 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE83BFD06E1941738224FFF6 /* libPods.a */; };
 		8D3AC9A71933E90500403B95 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8D3AC9A41933E90500403B95 /* SVProgressHUD.bundle */; };
 		8D3AC9A81933E90500403B95 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3AC9A61933E90500403B95 /* SVProgressHUD.m */; };
+		8D3AC9AC1933F42700403B95 /* OrderHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3AC9AB1933F42700403B95 /* OrderHistoryTableViewController.m */; };
 		8DF569B11930321A0085EF05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569B01930321A0085EF05 /* Foundation.framework */; };
 		8DF569B31930321A0085EF05 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569B21930321A0085EF05 /* CoreGraphics.framework */; };
 		8DF569B51930321A0085EF05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF569B41930321A0085EF05 /* UIKit.framework */; };
@@ -63,6 +64,8 @@
 		8D3AC9A41933E90500403B95 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		8D3AC9A51933E90500403B95 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		8D3AC9A61933E90500403B95 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		8D3AC9AA1933F42700403B95 /* OrderHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHistoryTableViewController.h; sourceTree = "<group>"; };
+		8D3AC9AB1933F42700403B95 /* OrderHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderHistoryTableViewController.m; sourceTree = "<group>"; };
 		8DF569AD1930321A0085EF05 /* Allpick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Allpick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF569B01930321A0085EF05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8DF569B21930321A0085EF05 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -223,6 +226,8 @@
 				8DF56A251932A6F10085EF05 /* Cart.m */,
 				8DF56A291932FC810085EF05 /* CartSummary.h */,
 				8DF56A2A1932FC810085EF05 /* CartSummary.m */,
+				8D3AC9AA1933F42700403B95 /* OrderHistoryTableViewController.h */,
+				8D3AC9AB1933F42700403B95 /* OrderHistoryTableViewController.m */,
 				8DF56A18193280DE0085EF05 /* MenuListTableViewController.h */,
 				8DF56A19193280DE0085EF05 /* MenuListTableViewController.m */,
 				8DF56A11193045AB0085EF05 /* MenuViewController.h */,
@@ -409,6 +414,7 @@
 				8D3AC9A81933E90500403B95 /* SVProgressHUD.m in Sources */,
 				8DF56A1A193280DE0085EF05 /* MenuListTableViewController.m in Sources */,
 				8DF56A13193045AB0085EF05 /* MenuViewController.m in Sources */,
+				8D3AC9AC1933F42700403B95 /* OrderHistoryTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

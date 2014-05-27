@@ -37,7 +37,11 @@
 
 
 - (IBAction)greatWall:(id)sender {
-    [self performSegueWithIdentifier: @"moveToLocation" sender: self];
+    [self performSegueWithIdentifier:@"moveToLocation" sender:self];
+}
+
+- (IBAction)orderHistory:(id)sender {
+    [self performSegueWithIdentifier:@"moveToOrderHistory" sender:self];
 }
 
 
