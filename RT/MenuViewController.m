@@ -53,7 +53,7 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.childViewController.view.frame = CGRectMake(0, 150, self.view.frame.size.width, self.view.frame.size.height - 250);
+    self.childViewController.view.frame = CGRectMake(0, 150, self.view.frame.size.width, self.view.frame.size.height - 255);
 }
 
 
