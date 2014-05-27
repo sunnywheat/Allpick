@@ -95,8 +95,6 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MM-dd HH:mm:ss"];
-    
-    //Optionally for time zone converstions
     [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"EDT"]];
     
     UILabel *createTimeLabel = (UILabel *) [cell viewWithTag:200];
@@ -104,6 +102,9 @@
     
     UILabel *orderLabel = (UILabel *) [cell viewWithTag:201];
     orderLabel.text = [object objectForKey:@"order"];
+    
+    UILabel *numberLabel = (UILabel *) [cell viewWithTag:202];
+    numberLabel.text = [NSString stringWithFormat:@"NUMBER: #%@", [object objectForKey:@"orderNumber"]];
     
     return cell;
 }

@@ -64,17 +64,28 @@
 }
 
 
-
 - (IBAction)confirmOrder:(id)sender {
-    if (self.cartIsReady) {
-        UIAlertView *confirmOrderAlert = [[UIAlertView alloc] initWithTitle:@"Your Cart" message:self.cartLabel.text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
-        [confirmOrderAlert setTag:1];
-        [confirmOrderAlert show];
+    // Get the current date.
+    NSDate *date = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"HH"];
+    int i = [[dateFormat stringFromDate:date] intValue];
+    if (i < 11) {
+        if (self.cartIsReady) {
+            UIAlertView *confirmOrderAlert = [[UIAlertView alloc] initWithTitle:@"Your Cart" message:self.cartLabel.text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
+            [confirmOrderAlert setTag:1];
+            [confirmOrderAlert show];
+        }
+        else {
+            UIAlertView *continueAlert = [[UIAlertView alloc] initWithTitle:@"Your Cart" message:@"Please make an order. The cart is empty." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+            [continueAlert setTag:2];
+            [continueAlert show];
+        }
     }
     else {
-        UIAlertView *continueAlert = [[UIAlertView alloc] initWithTitle:@"Your Cart" message:@"Please make an order. The cart is empty." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
-        [continueAlert setTag:2];
-        [continueAlert show];
+        UIAlertView *shutDownAlert = [[UIAlertView alloc] initWithTitle:@"Your Cart" message:@"Please make the order between before 11:00 am" delegate:self cancelButtonTitle:@"See you tomorrow." otherButtonTitles: nil];
+        [shutDownAlert setTag:3];
+        [shutDownAlert show];
     }
 }
 
@@ -84,29 +95,41 @@
     
     PFObject *orderPFObject = [PFObject objectWithClassName:@"Orders"];
     PFQuery *orderCount = [PFQuery queryWithClassName:@"Orders"];
-    PFQuery *orderPFQuery = [PFQuery queryWithClassName:@"Orders"];
+    PFQuery *orderSaveOrderNumber = [PFQuery queryWithClassName:@"Orders"];
     
     orderPFObject[@"order"] = self.cartLabel.text;
+    // id didn't work.
     orderPFObject[@"ID"] = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    
+    // Get the current date.
+    NSDate *date = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM dd, yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:date];
+    
+    orderPFObject[@"date"] = dateString;
+    
     // 1
     [orderPFObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+            // create at time
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             [formatter setDateFormat:@"MM-dd HH:mm:ss"];
-            //Optionally for time zone converstions
             [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"EDT"]];
             
             // 2
             [orderCount whereKey:@"createdAt" lessThan:[orderPFObject createdAt]];
+            [orderCount whereKey:@"date" equalTo:dateString];
+            
             [orderCount countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
                 if (!error) {
-                    self.orderNumber = [NSNumber numberWithInt:count];
+                    self.orderNumber = [NSNumber numberWithInt:count+1];
                     
-                    NSString* currentOrder = [NSString stringWithFormat:@"%@\nNUMBER:%i\n\n%@",[formatter stringFromDate:[orderPFObject createdAt]], count, self.cartLabel.text];
+                    NSString* currentOrder = [NSString stringWithFormat:@"%@\nNUMBER:%i\n\n%@",[formatter stringFromDate:[orderPFObject createdAt]], count+1, self.cartLabel.text];
                     [[NSUserDefaults standardUserDefaults] setObject:currentOrder forKey:@"currentOrder"];
                     
                     // 3
-                    [orderPFQuery getObjectInBackgroundWithId:[orderPFObject objectId] block:^(PFObject *currentOrderPFObject, NSError *error) {
+                    [orderSaveOrderNumber getObjectInBackgroundWithId:[orderPFObject objectId] block:^(PFObject *currentOrderPFObject, NSError *error) {
                         currentOrderPFObject[@"orderNumber"] = self.orderNumber;
                         [currentOrderPFObject saveInBackground];
                     }];
