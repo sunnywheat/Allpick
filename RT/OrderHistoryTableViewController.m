@@ -102,6 +102,9 @@
     UILabel *createTimeLabel = (UILabel *) [cell viewWithTag:200];
     createTimeLabel.text = [formatter stringFromDate:[object createdAt]];
     
+    UILabel *orderLabel = (UILabel *) [cell viewWithTag:201];
+    orderLabel.text = [object objectForKey:@"order"];
+    
     return cell;
 }
 
