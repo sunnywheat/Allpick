@@ -187,7 +187,7 @@
 {
     NSMutableString *tempCart = [[NSMutableString alloc] initWithString:@"ORDER "];
     for (id key in self.cart) {
-        [tempCart appendFormat:@"%@: %i, ", key, [[self.cart objectForKey:key] integerValue]];
+        [tempCart appendFormat:@"%@: %li, ", key, (long)[[self.cart objectForKey:key] integerValue]];
     }
     
     BOOL tempEmpty = YES;
