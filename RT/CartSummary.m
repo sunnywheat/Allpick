@@ -11,6 +11,7 @@
 @implementation CartSummary
 
 @synthesize someProperty;
+@synthesize currentOrder;
 
 #pragma mark Singleton Methods
 + (id)sharedManager {
@@ -40,6 +41,16 @@
     // Ensure we are using the shared instance
     CartSummary *shared = [CartSummary sharedManager];
     shared.someProperty = someData;
+}
+
++(NSString *) getCurrentOrder {
+    CartSummary *shared = [CartSummary sharedManager];
+    return shared.currentOrder;
+}
+
++(void) setCurrentOrder:(NSString *)order {
+    CartSummary *shared = [CartSummary sharedManager];
+    shared.currentOrder = order;
 }
 
 @end

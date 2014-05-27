@@ -32,7 +32,7 @@
         
         // Whether the built-in pagination is enabled
         self.paginationEnabled = YES;
-        self.objectsPerPage = 10;
+        self.objectsPerPage = 3;
         
     }
     return self;

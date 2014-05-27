@@ -10,13 +10,18 @@
 
 @interface CartSummary : NSObject {
     NSString *someProperty;
+    NSString *currentOrder;
 }
 
 @property (nonatomic, retain) NSString *someProperty;
+@property (nonatomic, retain) NSString *currentOrder;
 
 + (id)sharedManager;
 
 +(NSString *) getSomeData;
 +(void) setSomeData:(NSString *)someData;
+
++(NSString *) getCurrentOrder;
++(void) setCurrentOrder:(NSString *) order;
 
 @end

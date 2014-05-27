@@ -7,8 +7,10 @@
 //
 
 #import "RestaurantViewController.h"
+#import "CartSummary.h"
 
 @interface RestaurantViewController ()
+@property (strong, nonatomic) IBOutlet UILabel *currentOrderLabel;
 
 @end
 
@@ -29,6 +31,14 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"Home";
     [self.navigationItem setHidesBackButton:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"currentOrder"] != NULL) {
+        self.currentOrderLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentOrder"];
+    }
 }
 
 - (void)didReceiveMemoryWarning

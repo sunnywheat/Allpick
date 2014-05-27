@@ -11,6 +11,7 @@
 #import "MenuListTableViewController.h"
 #import <Parse/Parse.h>
 #import "SVProgressHUD.h"
+#import "CartSummary.h"
 
 @interface MenuViewController ()
 @property (nonatomic, strong) MenuListTableViewController *childViewController;
@@ -86,8 +87,12 @@
     orderPFObject[@"ID"] = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     [orderPFObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            NSLog(@"succeeded.");
-            
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"MM-dd HH:mm:ss"];
+            //Optionally for time zone converstions
+            [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"EDT"]];
+            NSString* currentOrder = [NSString stringWithFormat:@"%@\n\n%@",[formatter stringFromDate:[orderPFObject createdAt]], self.cartLabel.text];
+            [[NSUserDefaults standardUserDefaults] setObject:currentOrder forKey:@"currentOrder"];
             [self performSegueWithIdentifier:@"moveToRestaurant" sender:self];
             
             [SVProgressHUD dismiss];
