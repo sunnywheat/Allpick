@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Allpick": {
+            "applicationId": "k0QlMNHfsjaER2oY0DlZI7nB9B0xs2kgDpPcicDe", 
+            "masterKey": "MZWCSJV14JeYMSP4Scl1o3OgyDmteIIJO7hvzugu"
+        }, 
+        "_default": {
+            "link": "Allpick"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.18"
+    }
+}

@@ -59,7 +59,17 @@
     [PFAnalytics trackEvent:@"read" dimensions:dimensions];
     */
     
-    
+    /*
+    [PFCloud callFunctionInBackground:@"hello"
+                       withParameters:@{}
+                                block:^(NSString *result, NSError *error) {
+                                    if (!error) {
+                                        // result is @"Hello world!"
+                                        NSLog(@"hello this is parse.com.");
+                                    }
+                                }];
+    */
+     
     // Mixpanel
     [Mixpanel sharedInstanceWithToken:@"0e27a8b5b6dcf19dba41a6c118a1d354"];
     
