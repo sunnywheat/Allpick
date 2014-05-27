@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ke9-B5-zDE">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Restaurant View Controller - Home-->
+        <!--Restaurant View Controller-->
         <scene sceneID="YSp-zJ-ZDF">
             <objects>
                 <viewController id="aFN-h8-WAd" customClass="RestaurantViewController" sceneMemberID="viewController">
@@ -58,7 +59,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="LGa-P3-2gH"/>
+                    <navigationItem key="navigationItem" id="LGa-P3-2gH"/>
                     <connections>
                         <segue destination="En5-Do-b7O" kind="push" identifier="moveToLocation" id="MoV-WH-29D"/>
                         <segue destination="o1T-Ub-7Vf" kind="push" identifier="moveToOrderHistory" id="Q8k-N1-OlN"/>
@@ -68,7 +69,7 @@
             </objects>
             <point key="canvasLocation" x="-168" y="-80"/>
         </scene>
-        <!--Location View Controller - Location-->
+        <!--Location View Controller-->
         <scene sceneID="Rvs-Lt-hJW">
             <objects>
                 <viewController id="En5-Do-b7O" customClass="LocationViewController" sceneMemberID="viewController">
@@ -133,7 +134,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Location" id="Ys7-JU-1W6"/>
+                    <navigationItem key="navigationItem" id="Ys7-JU-1W6"/>
                     <connections>
                         <segue destination="PrE-6H-O8R" kind="push" identifier="moveToMenu" id="whJ-GM-E10"/>
                     </connections>
