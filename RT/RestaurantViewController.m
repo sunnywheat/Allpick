@@ -34,10 +34,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
+    [super viewWillAppear:animated];    
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"currentOrder"] != NULL) {
-        self.currentOrderLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentOrder"];
+        [self.currentOrderLabel setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"currentOrder"]];
     }
 }
 

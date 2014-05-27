@@ -17,6 +17,7 @@
 @property (nonatomic, strong) MenuListTableViewController *childViewController;
 @property (nonatomic, strong) IBOutlet UILabel *cartLabel;
 @property (nonatomic, assign) BOOL cartIsReady;
+@property (nonatomic, strong) NSNumber *orderNumber;
 
 @end
 
@@ -66,13 +67,11 @@
 
 - (IBAction)confirmOrder:(id)sender {
     if (self.cartIsReady) {
-        NSLog(@"Thank you.");
         UIAlertView *confirmOrderAlert = [[UIAlertView alloc] initWithTitle:@"Your Cart" message:self.cartLabel.text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
         [confirmOrderAlert setTag:1];
         [confirmOrderAlert show];
     }
     else {
-        NSLog(@"make more");
         UIAlertView *continueAlert = [[UIAlertView alloc] initWithTitle:@"Your Cart" message:@"Please make an order. The cart is empty." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
         [continueAlert setTag:2];
         [continueAlert show];
@@ -82,20 +81,40 @@
 
 - (void) saveCartToParse {
     [SVProgressHUD show];
+    
     PFObject *orderPFObject = [PFObject objectWithClassName:@"Orders"];
+    PFQuery *orderCount = [PFQuery queryWithClassName:@"Orders"];
+    PFQuery *orderPFQuery = [PFQuery queryWithClassName:@"Orders"];
+    
     orderPFObject[@"order"] = self.cartLabel.text;
     orderPFObject[@"ID"] = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    // 1
     [orderPFObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             [formatter setDateFormat:@"MM-dd HH:mm:ss"];
             //Optionally for time zone converstions
             [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"EDT"]];
-            NSString* currentOrder = [NSString stringWithFormat:@"%@\n\n%@",[formatter stringFromDate:[orderPFObject createdAt]], self.cartLabel.text];
-            [[NSUserDefaults standardUserDefaults] setObject:currentOrder forKey:@"currentOrder"];
-            [self performSegueWithIdentifier:@"moveToRestaurant" sender:self];
             
-            [SVProgressHUD dismiss];
+            // 2
+            [orderCount whereKey:@"createdAt" lessThan:[orderPFObject createdAt]];
+            [orderCount countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+                if (!error) {
+                    self.orderNumber = [NSNumber numberWithInt:count];
+                    
+                    NSString* currentOrder = [NSString stringWithFormat:@"%@\nNUMBER:%i\n\n%@",[formatter stringFromDate:[orderPFObject createdAt]], count, self.cartLabel.text];
+                    [[NSUserDefaults standardUserDefaults] setObject:currentOrder forKey:@"currentOrder"];
+                    
+                    // 3
+                    [orderPFQuery getObjectInBackgroundWithId:[orderPFObject objectId] block:^(PFObject *currentOrderPFObject, NSError *error) {
+                        currentOrderPFObject[@"orderNumber"] = self.orderNumber;
+                        [currentOrderPFObject saveInBackground];
+                    }];
+                    
+                    [self performSegueWithIdentifier:@"moveToRestaurant" sender:self];
+                    [SVProgressHUD dismiss];
+                }
+            }];
         }
     }];
     
