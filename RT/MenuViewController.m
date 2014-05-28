@@ -126,8 +126,17 @@
                 if (!error) {
                     self.orderNumber = [NSNumber numberWithInt:count+1];
                     
-                    NSString* currentOrder = [NSString stringWithFormat:@"%@\nNUMBER:%i\n\n%@",[formatter stringFromDate:[orderPFObject createdAt]], count+1, self.cartLabel.text];
+                    NSString* currentOrder = [NSString stringWithFormat:@"%@\nNUMBER:#%i\n\n%@",[formatter stringFromDate:[orderPFObject createdAt]], count+1, self.cartLabel.text];
                     [[NSUserDefaults standardUserDefaults] setObject:currentOrder forKey:@"currentOrder"];
+                    
+                    // Send a message
+                    [PFCloud callFunctionInBackground:@"sendMessageToTwillio"
+                                       withParameters:@{@"order":currentOrder}
+                                                block:^(NSString *result, NSError *error) {
+                                                    if (!error) {
+                                                        // NSLog(@"The message is sent.");
+                                                    }
+                                                }];
                     
                     // 3
                     [orderSaveOrderNumber getObjectInBackgroundWithId:[orderPFObject objectId] block:^(PFObject *currentOrderPFObject, NSError *error) {
