@@ -149,8 +149,8 @@
                                     <constraint firstAttribute="height" constant="50" id="qdG-LF-0dQ"/>
                                 </constraints>
                             </adBannerView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pickup time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTC-su-XPM">
-                                <rect key="frame" x="32" y="343" width="96" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick up time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTC-su-XPM">
+                                <rect key="frame" x="32" y="343" width="101" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="XAn-aR-mqg"/>
@@ -179,10 +179,21 @@
                                 <color key="textColor" red="0.27450980390000002" green="0.30588235289999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select the pick up location." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fe9-lJ-KoV">
+                                <rect key="frame" x="32" y="324" width="268" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="nnF-nS-l6M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <color key="textColor" red="0.27450980390000002" green="0.30588235289999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="yBG-ea-96u" firstAttribute="top" secondItem="8eH-E4-OKe" secondAttribute="bottom" constant="8" id="6mr-4i-k2U"/>
+                            <constraint firstItem="Fe9-lJ-KoV" firstAttribute="leading" secondItem="Uy0-Ad-TBU" secondAttribute="leading" constant="32" id="8RI-TB-Xd2"/>
                             <constraint firstAttribute="trailing" secondItem="8eH-E4-OKe" secondAttribute="trailing" constant="20" id="CGc-eS-pam"/>
                             <constraint firstItem="8eH-E4-OKe" firstAttribute="top" secondItem="C4t-aH-Yim" secondAttribute="bottom" constant="8" id="Dcd-en-DIi"/>
                             <constraint firstItem="e5w-Vq-Wak" firstAttribute="leading" secondItem="Uy0-Ad-TBU" secondAttribute="leading" constant="32" id="Hot-1F-2ZB"/>
@@ -192,14 +203,16 @@
                             <constraint firstItem="HPB-3g-EME" firstAttribute="top" secondItem="yBG-ea-96u" secondAttribute="bottom" id="QqB-Yb-9l7"/>
                             <constraint firstAttribute="trailing" secondItem="e5w-Vq-Wak" secondAttribute="trailing" constant="72" id="V1M-Kt-qBL"/>
                             <constraint firstAttribute="trailing" secondItem="igt-rF-ZhL" secondAttribute="trailing" constant="95" id="XBN-er-hgl"/>
+                            <constraint firstItem="igt-rF-ZhL" firstAttribute="top" secondItem="Fe9-lJ-KoV" secondAttribute="bottom" constant="18" id="Xh6-cz-z0p"/>
                             <constraint firstAttribute="trailing" secondItem="C4t-aH-Yim" secondAttribute="trailing" constant="20" id="Xu0-aF-UNQ"/>
                             <constraint firstItem="e5w-Vq-Wak" firstAttribute="top" secondItem="iTC-su-XPM" secondAttribute="bottom" constant="19" id="ZAE-vJ-33e"/>
                             <constraint firstItem="yBG-ea-96u" firstAttribute="leading" secondItem="Uy0-Ad-TBU" secondAttribute="leading" id="e38-5z-9OB"/>
                             <constraint firstItem="C4t-aH-Yim" firstAttribute="top" secondItem="igt-rF-ZhL" secondAttribute="bottom" constant="28" id="i6z-2e-zBZ"/>
                             <constraint firstItem="8eH-E4-OKe" firstAttribute="leading" secondItem="Uy0-Ad-TBU" secondAttribute="leading" constant="20" id="jju-Lt-JZ5"/>
                             <constraint firstAttribute="trailing" secondItem="yBG-ea-96u" secondAttribute="trailing" id="oxK-zO-iye"/>
+                            <constraint firstAttribute="trailing" secondItem="Fe9-lJ-KoV" secondAttribute="trailing" constant="20" id="rrc-la-1YJ"/>
                             <constraint firstItem="C4t-aH-Yim" firstAttribute="top" secondItem="e5w-Vq-Wak" secondAttribute="bottom" constant="8" id="ugR-bJ-SA1"/>
-                            <constraint firstAttribute="trailing" secondItem="iTC-su-XPM" secondAttribute="trailing" constant="192" id="xhL-q3-qn5"/>
+                            <constraint firstAttribute="trailing" secondItem="iTC-su-XPM" secondAttribute="trailing" constant="187" id="xhL-q3-qn5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ys7-JU-1W6"/>
