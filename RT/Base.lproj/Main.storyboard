@@ -17,10 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPr-FU-tl0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPr-FU-tl0">
                                 <rect key="frame" x="20" y="465" width="280" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="2cL-1z-4Un"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Great Wall">
@@ -31,21 +34,30 @@
                                     <action selector="greatWall:" destination="aFN-h8-WAd" eventType="touchUpInside" id="90C-yX-e4T"/>
                                 </connections>
                             </button>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nAk-5e-reP">
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="nAk-5e-reP">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9n1-Pl-WDs"/>
+                                </constraints>
                             </adBannerView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your current order is empty." lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="zVP-VV-gLm">
-                                <rect key="frame" x="20" y="73" width="280" height="180"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your current order is empty." lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="zVP-VV-gLm">
+                                <rect key="frame" x="20" y="70" width="280" height="206"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="206" id="vUg-2B-AoO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Trebuchet-BoldItalic" family="Trebuchet MS" pointSize="17"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.30588235289999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jio-h4-mjh">
-                                <rect key="frame" x="20" y="337" width="280" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jio-h4-mjh">
+                                <rect key="frame" x="20" y="287" width="280" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Sgu-h9-vhm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Order History">
@@ -58,6 +70,20 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iPr-FU-tl0" secondAttribute="trailing" constant="20" id="62Z-tv-wRq"/>
+                            <constraint firstAttribute="trailing" secondItem="zVP-VV-gLm" secondAttribute="trailing" constant="20" id="949-Ww-Ai3"/>
+                            <constraint firstAttribute="bottom" secondItem="nAk-5e-reP" secondAttribute="bottom" id="DZf-jm-qjB"/>
+                            <constraint firstItem="zVP-VV-gLm" firstAttribute="top" secondItem="RB0-Ke-jMJ" secondAttribute="top" constant="70" id="HTd-gc-Dzo"/>
+                            <constraint firstItem="iPr-FU-tl0" firstAttribute="leading" secondItem="RB0-Ke-jMJ" secondAttribute="leading" constant="20" id="OKD-hO-Joh"/>
+                            <constraint firstAttribute="trailing" secondItem="Jio-h4-mjh" secondAttribute="trailing" constant="20" id="SgK-AU-aLH"/>
+                            <constraint firstItem="nAk-5e-reP" firstAttribute="top" secondItem="iPr-FU-tl0" secondAttribute="bottom" constant="8" id="WTU-i0-Kfh"/>
+                            <constraint firstItem="Jio-h4-mjh" firstAttribute="leading" secondItem="RB0-Ke-jMJ" secondAttribute="leading" constant="20" id="jet-wf-gaR"/>
+                            <constraint firstItem="Jio-h4-mjh" firstAttribute="top" secondItem="zVP-VV-gLm" secondAttribute="bottom" constant="11" id="oYZ-hJ-YWK"/>
+                            <constraint firstAttribute="trailing" secondItem="nAk-5e-reP" secondAttribute="trailing" id="oc1-ni-vEe"/>
+                            <constraint firstItem="nAk-5e-reP" firstAttribute="leading" secondItem="RB0-Ke-jMJ" secondAttribute="leading" id="ojy-V2-mzv"/>
+                            <constraint firstItem="zVP-VV-gLm" firstAttribute="leading" secondItem="RB0-Ke-jMJ" secondAttribute="leading" constant="20" id="xmT-KG-D6x"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LGa-P3-2gH"/>
                     <connections>
@@ -82,10 +108,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eH-E4-OKe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eH-E4-OKe">
                                 <rect key="frame" x="20" y="465" width="280" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="cBY-Dj-wmP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Physics Building">
@@ -96,10 +125,13 @@
                                     <action selector="physicsBuilding:" destination="En5-Do-b7O" eventType="touchUpInside" id="uuL-9s-Kvg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4t-aH-Yim">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4t-aH-Yim">
                                 <rect key="frame" x="20" y="412" width="280" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.689484627016129" green="0.48787172379032256" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="U4J-f2-l5Z"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Hawkins Hall">
@@ -110,33 +142,65 @@
                                     <action selector="hawkinsHall:" destination="En5-Do-b7O" eventType="touchUpInside" id="i0h-1r-Rlw"/>
                                 </connections>
                             </button>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yBG-ea-96u">
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="yBG-ea-96u">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qdG-LF-0dQ"/>
+                                </constraints>
                             </adBannerView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pickup time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTC-su-XPM">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pickup time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTC-su-XPM">
                                 <rect key="frame" x="32" y="343" width="96" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="XAn-aR-mqg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.30588235289999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hawkins Hall - 12: 00 pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igt-rF-ZhL">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hawkins Hall - 12: 00 pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igt-rF-ZhL">
                                 <rect key="frame" x="32" y="363" width="193" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Rcf-0t-OCt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.30588235289999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Physics Building - 12:15 pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5w-Vq-Wak">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Physics Building - 12:15 pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5w-Vq-Wak">
                                 <rect key="frame" x="32" y="383" width="216" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="hja-JD-PQL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.30588235289999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yBG-ea-96u" firstAttribute="top" secondItem="8eH-E4-OKe" secondAttribute="bottom" constant="8" id="6mr-4i-k2U"/>
+                            <constraint firstAttribute="trailing" secondItem="8eH-E4-OKe" secondAttribute="trailing" constant="20" id="CGc-eS-pam"/>
+                            <constraint firstItem="8eH-E4-OKe" firstAttribute="top" secondItem="C4t-aH-Yim" secondAttribute="bottom" constant="8" id="Dcd-en-DIi"/>
+                            <constraint firstItem="e5w-Vq-Wak" firstAttribute="leading" secondItem="Uy0-Ad-TBU" secondAttribute="leading" constant="32" id="Hot-1F-2ZB"/>
+                            <constraint firstItem="iTC-su-XPM" firstAttribute="leading" secondItem="Uy0-Ad-TBU" secondAttribute="leading" constant="32" id="LwQ-g7-3eL"/>
+                            <constraint firstItem="C4t-aH-Yim" firstAttribute="leading" secondItem="Uy0-Ad-TBU" secondAttribute="leading" constant="20" id="P5k-3i-ZIR"/>
+                            <constraint firstItem="igt-rF-ZhL" firstAttribute="leading" secondItem="Uy0-Ad-TBU" secondAttribute="leading" constant="32" id="PpF-PD-xmw"/>
+                            <constraint firstItem="HPB-3g-EME" firstAttribute="top" secondItem="yBG-ea-96u" secondAttribute="bottom" id="QqB-Yb-9l7"/>
+                            <constraint firstAttribute="trailing" secondItem="e5w-Vq-Wak" secondAttribute="trailing" constant="72" id="V1M-Kt-qBL"/>
+                            <constraint firstAttribute="trailing" secondItem="igt-rF-ZhL" secondAttribute="trailing" constant="95" id="XBN-er-hgl"/>
+                            <constraint firstAttribute="trailing" secondItem="C4t-aH-Yim" secondAttribute="trailing" constant="20" id="Xu0-aF-UNQ"/>
+                            <constraint firstItem="e5w-Vq-Wak" firstAttribute="top" secondItem="iTC-su-XPM" secondAttribute="bottom" constant="19" id="ZAE-vJ-33e"/>
+                            <constraint firstItem="yBG-ea-96u" firstAttribute="leading" secondItem="Uy0-Ad-TBU" secondAttribute="leading" id="e38-5z-9OB"/>
+                            <constraint firstItem="C4t-aH-Yim" firstAttribute="top" secondItem="igt-rF-ZhL" secondAttribute="bottom" constant="28" id="i6z-2e-zBZ"/>
+                            <constraint firstItem="8eH-E4-OKe" firstAttribute="leading" secondItem="Uy0-Ad-TBU" secondAttribute="leading" constant="20" id="jju-Lt-JZ5"/>
+                            <constraint firstAttribute="trailing" secondItem="yBG-ea-96u" secondAttribute="trailing" id="oxK-zO-iye"/>
+                            <constraint firstItem="C4t-aH-Yim" firstAttribute="top" secondItem="e5w-Vq-Wak" secondAttribute="bottom" constant="8" id="ugR-bJ-SA1"/>
+                            <constraint firstAttribute="trailing" secondItem="iTC-su-XPM" secondAttribute="trailing" constant="192" id="xhL-q3-qn5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ys7-JU-1W6"/>
                     <connections>
@@ -211,14 +275,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="73M-sa-niN">
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="73M-sa-niN">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="eC4-hK-XJY"/>
+                                </constraints>
                             </adBannerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fs6-0L-YoK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fs6-0L-YoK">
                                 <rect key="frame" x="20" y="465" width="280" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="hJG-ya-mQA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Confirm">
@@ -229,14 +299,28 @@
                                     <action selector="confirmOrder:" destination="PrE-6H-O8R" eventType="touchUpInside" id="d5M-HV-Fc4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ORDER" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="xN0-5u-hDU">
-                                <rect key="frame" x="15" y="70" width="280" height="68"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ORDER" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="293" translatesAutoresizingMaskIntoConstraints="NO" id="xN0-5u-hDU">
+                                <rect key="frame" x="15" y="70" width="293" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="rY6-u7-enj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Trebuchet-BoldItalic" family="Trebuchet MS" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xN0-5u-hDU" firstAttribute="leading" secondItem="QsJ-wf-IHi" secondAttribute="leading" constant="15" id="3Ww-KN-jOD"/>
+                            <constraint firstItem="73M-sa-niN" firstAttribute="top" secondItem="fs6-0L-YoK" secondAttribute="bottom" constant="8" id="GWN-wv-1TU"/>
+                            <constraint firstItem="cug-VV-Rfs" firstAttribute="top" secondItem="73M-sa-niN" secondAttribute="bottom" id="b5w-ze-on5"/>
+                            <constraint firstItem="xN0-5u-hDU" firstAttribute="top" secondItem="QsJ-wf-IHi" secondAttribute="top" constant="70" id="ihg-zR-pgL"/>
+                            <constraint firstAttribute="trailing" secondItem="fs6-0L-YoK" secondAttribute="trailing" constant="20" id="rsQ-Yd-UHx"/>
+                            <constraint firstItem="73M-sa-niN" firstAttribute="leading" secondItem="QsJ-wf-IHi" secondAttribute="leading" id="tNd-mw-uAk"/>
+                            <constraint firstAttribute="trailing" secondItem="xN0-5u-hDU" secondAttribute="trailing" constant="12" id="uAO-iM-AM6"/>
+                            <constraint firstItem="fs6-0L-YoK" firstAttribute="leading" secondItem="QsJ-wf-IHi" secondAttribute="leading" constant="20" id="vP2-px-bvg"/>
+                            <constraint firstAttribute="trailing" secondItem="73M-sa-niN" secondAttribute="trailing" id="zVU-zu-cYZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="4Lz-YO-Tdt"/>
                     <connections>
