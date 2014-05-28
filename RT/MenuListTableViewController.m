@@ -88,6 +88,12 @@
 - (PFQuery *)queryForTable
 {
     PFQuery *query = [PFQuery queryWithClassName:@"MenuGreatWall"];
+    
+    NSDate *now = [NSDate date];
+    NSDateFormatter *weekday = [[NSDateFormatter alloc] init];
+    [weekday setDateFormat: @"EEEE"];    
+    [query whereKey:[weekday stringFromDate:now] equalTo:@"YES"];
+    
     if ([self.objects count] == 0) {
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     }
