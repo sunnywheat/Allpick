@@ -58,7 +58,7 @@
 
 - (PFQuery *)queryForTable
 {
-    PFQuery *query = [PFQuery queryWithClassName:@"Orders"];
+    PFQuery *query = [PFQuery queryWithClassName:@"OrdersGreatWall"];
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query whereKey:@"ID" equalTo:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
     [query orderByDescending:@"createdAt"];

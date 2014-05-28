@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "Colours.h"
 #import <Mixpanel.h>
+#import "Appirater.h"
 
 @implementation AppDelegate
 
@@ -78,6 +79,16 @@
     [mixpanel identify:[[UIDevice currentDevice] name]];
     [mixpanel.people set:@{@"Plan": @"Early Version"}];
     
+    // call the Appirater class
+    [Appirater setAppId:@"698213315"];
+    [Appirater setDaysUntilPrompt:7];
+    [Appirater setUsesUntilPrompt:5];
+    [Appirater setSignificantEventsUntilPrompt:-1];
+    [Appirater setTimeBeforeReminding:3];
+    [Appirater setDebug:NO];
+    [Appirater appLaunched:YES];
+    
+    
     return YES;
 }
 							
@@ -96,6 +107,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [Appirater appEnteredForeground:YES];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

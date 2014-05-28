@@ -70,7 +70,8 @@
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"HH"];
     int i = [[dateFormat stringFromDate:date] intValue];
-    if (i < 11) {
+    // 11
+    if (i < 24) {
         if (self.cartIsReady) {
             UIAlertView *confirmOrderAlert = [[UIAlertView alloc] initWithTitle:@"Your Cart" message:self.cartLabel.text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
             [confirmOrderAlert setTag:1];
@@ -93,9 +94,9 @@
 - (void) saveCartToParse {
     [SVProgressHUD show];
     
-    PFObject *orderPFObject = [PFObject objectWithClassName:@"Orders"];
-    PFQuery *orderCount = [PFQuery queryWithClassName:@"Orders"];
-    PFQuery *orderSaveOrderNumber = [PFQuery queryWithClassName:@"Orders"];
+    PFObject *orderPFObject = [PFObject objectWithClassName:@"OrdersGreatWall"];
+    PFQuery *orderCount = [PFQuery queryWithClassName:@"OrdersGreatWall"];
+    PFQuery *orderSaveOrderNumber = [PFQuery queryWithClassName:@"OrdersGreatWall"];
     
     orderPFObject[@"order"] = self.cartLabel.text;
     // id didn't work.

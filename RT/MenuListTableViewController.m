@@ -87,7 +87,7 @@
  
 - (PFQuery *)queryForTable
 {
-    PFQuery *query = [PFQuery queryWithClassName:@"Menu"];
+    PFQuery *query = [PFQuery queryWithClassName:@"MenuGreatWall"];
     if ([self.objects count] == 0) {
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     }
