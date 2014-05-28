@@ -722,6 +722,7 @@
 					"$(PROJECT_DIR)/RT/GoogleAnalytics",
 				);
 				PRODUCT_NAME = Allpick;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -746,6 +747,7 @@
 				);
 				PRODUCT_NAME = Allpick;
 				PROVISIONING_PROFILE = "CB880AEA-2137-4000-B5CD-301BC8E32A06";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

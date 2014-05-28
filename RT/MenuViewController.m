@@ -74,7 +74,7 @@
     [dateFormat setDateFormat:@"HH"];
     int i = [[dateFormat stringFromDate:date] intValue];
     // 11
-    if (i < 24) {
+    if (i < 11) {
         if (self.cartIsReady) {
             UIAlertView *confirmOrderAlert = [[UIAlertView alloc] initWithTitle:@"Your Cart" message:self.cartLabel.text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
             [confirmOrderAlert setTag:1];
@@ -132,7 +132,7 @@
                     NSString* currentOrder = [NSString stringWithFormat:@"%@\nNUMBER:#%i\n\n%@",[formatter stringFromDate:[orderPFObject createdAt]], count+1, self.cartLabel.text];
                     [[NSUserDefaults standardUserDefaults] setObject:currentOrder forKey:@"currentOrder"];
                     
-                    /*
+                    
                     // Send a message
                     [PFCloud callFunctionInBackground:@"sendMessageToTwillio"
                                        withParameters:@{@"order":currentOrder}
@@ -142,7 +142,7 @@
                                                     }
                                                 }];
                     
-                     */
+                     
                     
                     // 3
                     [orderSaveOrderNumber getObjectInBackgroundWithId:[orderPFObject objectId] block:^(PFObject *currentOrderPFObject, NSError *error) {
