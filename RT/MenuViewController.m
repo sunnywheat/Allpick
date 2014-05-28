@@ -17,6 +17,7 @@
 @property (nonatomic, strong) MenuListTableViewController *childViewController;
 @property (nonatomic, strong) IBOutlet UILabel *cartLabel;
 @property (nonatomic, assign) BOOL cartIsReady;
+@property (nonatomic, assign) int dishCount;
 @property (nonatomic, strong) NSNumber *orderNumber;
 
 @end
@@ -129,6 +130,7 @@
                     NSString* currentOrder = [NSString stringWithFormat:@"%@\nNUMBER:#%i\n\n%@",[formatter stringFromDate:[orderPFObject createdAt]], count+1, self.cartLabel.text];
                     [[NSUserDefaults standardUserDefaults] setObject:currentOrder forKey:@"currentOrder"];
                     
+                    /*
                     // Send a message
                     [PFCloud callFunctionInBackground:@"sendMessageToTwillio"
                                        withParameters:@{@"order":currentOrder}
@@ -137,6 +139,8 @@
                                                         // NSLog(@"The message is sent.");
                                                     }
                                                 }];
+                    
+                     */
                     
                     // 3
                     [orderSaveOrderNumber getObjectInBackgroundWithId:[orderPFObject objectId] block:^(PFObject *currentOrderPFObject, NSError *error) {
@@ -162,6 +166,7 @@
                 break;
             case 1:
                 [self saveCartToParse];
+                NSLog(@"%i", self.dishCount);
                 break;
             default:
                 break;
@@ -191,10 +196,11 @@
 
 
 #pragma mark - MenuListTableViewController delegate
--(void) updateCartSummary:(MenuListTableViewController *)f fetchedText:(NSString *)cart notEmpty:(BOOL)ready{
+-(void) updateCartSummary:(MenuListTableViewController *)f fetchedText:(NSString *)cart dishCount:(int)i notEmpty:(BOOL)ready{
     dispatch_async(dispatch_get_main_queue(), ^{
         self.cartLabel.text = cart;
         self.cartIsReady = ready;
+        self.dishCount = i;
     });
 
 }

@@ -16,7 +16,8 @@
 
 -(void)updateCartSummary: (MenuListTableViewController *)f
              fetchedText: (NSString *)cart
-                notEmpty: (BOOL) ready;
+               dishCount: (int)i
+                notEmpty: (BOOL)ready;
 
 
 @end
