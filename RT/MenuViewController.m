@@ -12,6 +12,8 @@
 #import <Parse/Parse.h>
 #import "SVProgressHUD.h"
 #import "CartSummary.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface MenuViewController ()
 @property (nonatomic, strong) MenuListTableViewController *childViewController;
@@ -148,6 +150,10 @@
                         [currentOrderPFObject saveInBackground];
                     }];
                     
+                    // 4
+                    [self onPurchaseCompletedGATracking:[orderPFObject objectId]];
+                    
+                    // 5
                     [self performSegueWithIdentifier:@"moveToRestaurant" sender:self];
                     [SVProgressHUD dismiss];
                 }
@@ -155,6 +161,21 @@
         }
     }];
     
+}
+
+/*
+ * Called when a purchase is processed and verified.
+ */
+- (void)onPurchaseCompletedGATracking: (NSString *) objectId {
+    // Assumes a tracker has already been initialized with a property ID, otherwise
+    // this call returns null.
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createTransactionWithId:objectId
+                                                     affiliation:@"GreatWall"
+                                                         revenue:[NSNumber numberWithInt:(self.dishCount*5)]
+                                                             tax:0
+                                                        shipping:0
+                                                    currencyCode:@"USD"] build]];
 }
 
 #pragma mark - UIAlertView
@@ -166,7 +187,6 @@
                 break;
             case 1:
                 [self saveCartToParse];
-                NSLog(@"%i", self.dishCount);
                 break;
             default:
                 break;

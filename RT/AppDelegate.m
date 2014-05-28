@@ -12,6 +12,7 @@
 #import "Colours.h"
 #import <Mixpanel.h>
 #import "Appirater.h"
+#import "GAI.h"
 
 @implementation AppDelegate
 
@@ -78,6 +79,12 @@
     // Track an event in Mixpanel Engagement
     [mixpanel identify:[[UIDevice currentDevice] name]];
     [mixpanel.people set:@{@"Plan": @"Early Version"}];
+    
+    // GoogleAnalytics
+    // Optional: set Logger to VERBOSE for debug information.
+    // [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    // Initialize tracker. Replace with your tracking ID.
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-51208804-3"];
     
     // call the Appirater class
     [Appirater setAppId:@"698213315"];
