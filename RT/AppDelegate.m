@@ -84,7 +84,7 @@
     // Optional: set Logger to VERBOSE for debug information.
     // [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
     // Initialize tracker. Replace with your tracking ID.
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-51208804-3"];
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-51208804-4"];
     
     // call the Appirater class
     [Appirater setAppId:@"698213315"];
