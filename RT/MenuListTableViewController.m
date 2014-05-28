@@ -116,6 +116,9 @@
     UILabel *nameLabel = (UILabel *) [cell viewWithTag:100];
     nameLabel.text = [object objectForKey:@"name"];
     
+    UILabel *nameEnglishLabel = (UILabel *) [cell viewWithTag:102];
+    nameEnglishLabel.text = [object objectForKey:@"nameEnglish"];
+    
     PFFile *thumbnail = [object objectForKey:@"imageFile"];
     PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:101];
     thumbnailImageView.file = thumbnail;
