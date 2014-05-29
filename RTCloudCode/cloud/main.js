@@ -12,7 +12,7 @@ Parse.Cloud.define("sendMessageToTwillio", function(request, response) {
  
 	// Send an SMS message
 	client.sendSms({
-		to:'+17654041448', 
+		to:'+19178039796', 
 	    from: '+13177080548', 
 	    body: request.params.order
 	  }, function(err, responseData) { 
