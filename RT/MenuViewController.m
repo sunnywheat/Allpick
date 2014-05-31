@@ -214,7 +214,6 @@
 }
 
 
-
 #pragma mark - MenuListTableViewController delegate
 -(void) updateCartSummary:(MenuListTableViewController *)f fetchedText:(NSString *)cart dishCount:(int)i notEmpty:(BOOL)ready{
     dispatch_async(dispatch_get_main_queue(), ^{

@@ -9,7 +9,6 @@
 #import "CartSummary.h"
 
 @implementation CartSummary
-
 @synthesize someProperty;
 @synthesize currentOrder;
 
