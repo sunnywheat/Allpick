@@ -9,6 +9,7 @@
 #import "RestaurantViewController.h"
 #import "CartSummary.h"
 
+
 @interface RestaurantViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *currentOrderLabel;
 
@@ -34,7 +35,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];    
+    [super viewWillAppear:animated];
+    self.screenName = @"Home";
+    
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"currentOrder"] != NULL) {
         [self.currentOrderLabel setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"currentOrder"]];
     }

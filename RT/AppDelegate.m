@@ -12,7 +12,8 @@
 #import "Colours.h"
 #import <Mixpanel.h>
 #import "Appirater.h"
-#import "GAI.h"
+#import <CoreData/CoreData.h>
+#import "GoogleAnalytics/GAI.h"
 
 @implementation AppDelegate
 
@@ -80,11 +81,14 @@
     [mixpanel identify:[[UIDevice currentDevice] name]];
     [mixpanel.people set:@{@"Plan": @"Early Version"}];
     
+    // Didn't work. Need to add an action to be tracked.
     // GoogleAnalytics
-    // Optional: set Logger to VERBOSE for debug information.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [GAI sharedInstance].dispatchInterval = 20;
     // [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
     // Initialize tracker. Replace with your tracking ID.
     [[GAI sharedInstance] trackerWithTrackingId:@"UA-51208804-4"];
+    
     
     // call the Appirater class
     [Appirater setAppId:@"698213315"];

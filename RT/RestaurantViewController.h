@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
 
-@interface RestaurantViewController : UIViewController
+@interface RestaurantViewController : GAITrackedViewController
 
 @end

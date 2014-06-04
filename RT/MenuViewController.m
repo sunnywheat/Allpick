@@ -74,7 +74,7 @@
     [dateFormat setDateFormat:@"HH"];
     int i = [[dateFormat stringFromDate:date] intValue];
     // 11
-    if (i < 11) {
+    if (i < 23) {
         if (self.cartIsReady) {
             UIAlertView *confirmOrderAlert = [[UIAlertView alloc] initWithTitle:@"Your Cart" message:self.cartLabel.text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
             [confirmOrderAlert setTag:1];
