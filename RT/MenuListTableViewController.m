@@ -124,6 +124,8 @@
     thumbnailImageView.file = thumbnail;
     [thumbnailImageView loadInBackground];
     
+    UIButton *colorButton = (UIButton *) [cell viewWithTag:103];
+    
     // Dynamically add buttons
     // add button
     UIButton *addDishButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
