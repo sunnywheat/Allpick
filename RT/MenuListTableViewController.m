@@ -13,6 +13,7 @@
 
 
 @interface MenuListTableViewController ()
+@property (nonatomic,strong) NSArray *colorButtonArray;
 
 @end
 
@@ -52,6 +53,9 @@
     
     
     self.cart = [[NSMutableDictionary alloc] init];
+    
+    UIColor *newColor = [UIColor waveColor];
+    self.colorButtonArray = [newColor colorSchemeOfType:ColorSchemeAnalagous];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -125,6 +129,9 @@
     [thumbnailImageView loadInBackground];
     
     UIButton *colorButton = (UIButton *) [cell viewWithTag:103];
+    int i = indexPath.row%4;
+    [colorButton setBackgroundColor:[self.colorButtonArray objectAtIndex:i]];
+
     
     // Dynamically add buttons
     // add button
