@@ -215,7 +215,7 @@
         tempEmpty = NO;
     }
         
-    NSString* cartSummary = [NSMutableString stringWithFormat:@"%@pick up location: %@.", tempCart, [CartSummary getSomeData]];
+    NSString* cartSummary = [NSMutableString stringWithFormat:@"%@PLACE: %@.", tempCart, [CartSummary getSomeData]];
     
     if ([delegate respondsToSelector:@selector(updateCartSummary:fetchedText:dishCount:notEmpty:)]) {
         [delegate updateCartSummary:self fetchedText:cartSummary dishCount:i notEmpty:tempEmpty];

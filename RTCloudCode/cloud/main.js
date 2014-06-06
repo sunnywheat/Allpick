@@ -25,5 +25,20 @@ Parse.Cloud.define("sendMessageToTwillio", function(request, response) {
 	  }
 	);
 
+		// Send an SMS message
+	client.sendSms({
+		to:'+17654041448', 
+	    from: '+13177080548', 
+	    body: request.params.order
+	  }, function(err, responseData) { 
+	    if (err) {
+	      console.log(err);
+	    } else { 
+	      console.log(responseData.from); 
+	      console.log(responseData.body);
+	    }
+	  }
+	);
+
 	response.success(request.params.order);
 });

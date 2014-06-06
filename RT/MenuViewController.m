@@ -116,22 +116,13 @@
     // 1
     [orderPFObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            // create at time
-            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            [formatter setDateFormat:@"MM-dd HH:mm:ss"];
-            [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"EDT"]];
-            
             // 2
-            [orderCount whereKey:@"createdAt" lessThan:[orderPFObject createdAt]];
-            [orderCount whereKey:@"date" equalTo:dateString];
-            
             [orderCount countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
                 if (!error) {
                     self.orderNumber = [NSNumber numberWithInt:count+1];
                     
-                    NSString* currentOrder = [NSString stringWithFormat:@"%@\nNUMBER:#%i\n\n%@",[formatter stringFromDate:[orderPFObject createdAt]], count+1, self.cartLabel.text];
+                    NSString* currentOrder = [NSString stringWithFormat:@"NUMBER:#%i %@", count+1, self.cartLabel.text];
                     [[NSUserDefaults standardUserDefaults] setObject:currentOrder forKey:@"currentOrder"];
-                    
                     
                     // Send a message
                     [PFCloud callFunctionInBackground:@"sendMessageToTwillio"
@@ -141,8 +132,6 @@
                                                         // NSLog(@"The message is sent.");
                                                     }
                                                 }];
-                    
-                     
                     
                     // 3
                     [orderSaveOrderNumber getObjectInBackgroundWithId:[orderPFObject objectId] block:^(PFObject *currentOrderPFObject, NSError *error) {
