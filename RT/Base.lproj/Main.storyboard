@@ -269,7 +269,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fs6-0L-YoK">
-                                <rect key="frame" x="20" y="465" width="280" height="45"/>
+                                <rect key="frame" x="20" y="514" width="280" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -300,7 +300,7 @@
                             <constraint firstItem="xN0-5u-hDU" firstAttribute="leading" secondItem="QsJ-wf-IHi" secondAttribute="leading" constant="15" id="3Ww-KN-jOD"/>
                             <constraint firstAttribute="trailing" secondItem="fs6-0L-YoK" secondAttribute="trailing" constant="20" id="8Xz-xa-LAT"/>
                             <constraint firstItem="fs6-0L-YoK" firstAttribute="leading" secondItem="QsJ-wf-IHi" secondAttribute="leading" constant="20" id="BHE-ox-mqS"/>
-                            <constraint firstItem="cug-VV-Rfs" firstAttribute="top" secondItem="fs6-0L-YoK" secondAttribute="bottom" constant="58" id="M1n-0c-Qjx"/>
+                            <constraint firstItem="cug-VV-Rfs" firstAttribute="top" secondItem="fs6-0L-YoK" secondAttribute="bottom" constant="9" id="M1n-0c-Qjx"/>
                             <constraint firstItem="xN0-5u-hDU" firstAttribute="top" secondItem="QsJ-wf-IHi" secondAttribute="top" constant="70" id="ihg-zR-pgL"/>
                             <constraint firstAttribute="trailing" secondItem="xN0-5u-hDU" secondAttribute="trailing" constant="12" id="uAO-iM-AM6"/>
                         </constraints>
