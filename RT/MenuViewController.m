@@ -39,7 +39,6 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = @"Menu";
-    
     self.cartIsReady = NO;
     
     // Do any additional setup after loading the view.
@@ -73,8 +72,9 @@
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"HH"];
     int i = [[dateFormat stringFromDate:date] intValue];
+    
     // 11
-    if (i < 23) {
+    if (i < 11) {
         if (self.cartIsReady) {
             UIAlertView *confirmOrderAlert = [[UIAlertView alloc] initWithTitle:@"Your Cart" message:self.cartLabel.text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
             [confirmOrderAlert setTag:1];
@@ -116,6 +116,7 @@
     // 1
     [orderPFObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+            
             // 2
             [orderCount countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
                 if (!error) {
