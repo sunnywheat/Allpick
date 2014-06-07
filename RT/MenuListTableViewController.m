@@ -95,7 +95,8 @@
     
     NSDate *now = [NSDate date];
     NSDateFormatter *weekday = [[NSDateFormatter alloc] init];
-    [weekday setDateFormat: @"EEEE"];    
+    [weekday setDateFormat: @"EEEE"];
+    [weekday setTimeZone:[NSTimeZone timeZoneWithName:@"EDT"]];
     [query whereKey:[weekday stringFromDate:now] equalTo:@"YES"];
     
     if ([self.objects count] == 0) {

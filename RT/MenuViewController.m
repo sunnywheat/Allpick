@@ -71,6 +71,7 @@
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"HH"];
+    [dateFormat setTimeZone:[NSTimeZone timeZoneWithName:@"EDT"]];
     int i = [[dateFormat stringFromDate:date] intValue];
     
     // 11
@@ -116,30 +117,31 @@
     orderPFObject[@"date"] = dateString;
     
     // 1
-    [orderPFObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    [orderPFObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error1) {
         if (succeeded) {
             
             // 2
-            [orderCount countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
-                if (!error) {
+            [orderCount countObjectsInBackgroundWithBlock:^(int count, NSError *error2) {
+                if (!error2) {
                     self.orderNumber = [NSNumber numberWithInt:count+1];
-                    
                     NSString* currentOrder = [NSString stringWithFormat:@"NUMBER:#%i %@", count+1, self.cartLabel.text];
                     [[NSUserDefaults standardUserDefaults] setObject:currentOrder forKey:@"currentOrder"];
                     
                     // Send a message
                     [PFCloud callFunctionInBackground:@"sendMessageToTwillio"
                                        withParameters:@{@"order":currentOrder}
-                                                block:^(NSString *result, NSError *error) {
-                                                    if (!error) {
+                                                block:^(NSString *result, NSError *error3) {
+                                                    if (!error3) {
                                                         // NSLog(@"The message is sent.");
                                                     }
                                                 }];
                     
                     // 3
-                    [orderSaveOrderNumber getObjectInBackgroundWithId:[orderPFObject objectId] block:^(PFObject *currentOrderPFObject, NSError *error) {
-                        currentOrderPFObject[@"orderNumber"] = self.orderNumber;
-                        [currentOrderPFObject saveInBackground];
+                    [orderSaveOrderNumber getObjectInBackgroundWithId:[orderPFObject objectId] block:^(PFObject *currentOrderPFObject, NSError *error4) {
+                        if (!error4) {
+                            currentOrderPFObject[@"orderNumber"] = self.orderNumber;
+                            [currentOrderPFObject saveInBackground];
+                        }
                     }];
                     
                     // 4
