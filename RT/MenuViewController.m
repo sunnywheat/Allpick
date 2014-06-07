@@ -109,6 +109,8 @@
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"MM dd, yyyy"];
+    [dateFormat setTimeZone:[NSTimeZone timeZoneWithName:@"EDT"]];
+
     NSString *dateString = [dateFormat stringFromDate:date];
     
     orderPFObject[@"date"] = dateString;
