@@ -8,10 +8,10 @@ Parse.Cloud.define("hello", function(request, response) {
 
 Parse.Cloud.define("sendMessageToTwillio", function(request, response) {
 	// Require and initialize the Twilio module with your credentials
-	var client = require('twilio')('AC840912e124927b5100895bc5b9a67f64', 'f83f5ef557fe90f1b1b4c6cc4d569d5c');
+	var client1 = require('twilio')('AC840912e124927b5100895bc5b9a67f64', 'f83f5ef557fe90f1b1b4c6cc4d569d5c');
  
 	// Send an SMS message
-	client.sendSms({
+	client1.sendSms({
 		to:'+19178039796', 
 	    from: '+13177080548', 
 	    body: request.params.order
@@ -25,8 +25,9 @@ Parse.Cloud.define("sendMessageToTwillio", function(request, response) {
 	  }
 	);
 
-		// Send an SMS message
-	client.sendSms({
+	var client2 = require('twilio')('AC840912e124927b5100895bc5b9a67f64', 'f83f5ef557fe90f1b1b4c6cc4d569d5c');
+	// Send an SMS message
+	client2.sendSms({
 		to:'+17654041448', 
 	    from: '+13177080548', 
 	    body: request.params.order
