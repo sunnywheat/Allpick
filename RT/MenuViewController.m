@@ -119,8 +119,11 @@
     // 1
     [orderPFObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error1) {
         if (succeeded) {
-            
+
             // 2
+            [orderCount whereKey:@"createdAt" lessThan:[orderPFObject createdAt]];
+            [orderCount whereKey:@"date" equalTo:dateString];
+            
             [orderCount countObjectsInBackgroundWithBlock:^(int count, NSError *error2) {
                 if (!error2) {
                     self.orderNumber = [NSNumber numberWithInt:count+1];
