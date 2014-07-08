@@ -148,7 +148,18 @@
                     }];
                     
                     // 4
-                    [self onPurchaseCompletedGATracking:[orderPFObject objectId]];
+                    // A bug is here.
+                    // [self onPurchaseCompletedGATracking:[orderPFObject objectId]];
+                    
+                    // Assumes a tracker has already been initialized with a property ID, otherwise
+                    // this call returns null.
+                    id tracker = [[GAI sharedInstance] defaultTracker];
+                    [tracker send:[[GAIDictionaryBuilder createTransactionWithId:[orderPFObject objectId]
+                                                                     affiliation:@"GreatWall"
+                                                                         revenue:[NSNumber numberWithInt:(self.dishCount*5)]
+                                                                             tax:0
+                                                                        shipping:0
+                                                                    currencyCode:@"USD"] build]];
                     
                     // 5
                     [self performSegueWithIdentifier:@"moveToRestaurant" sender:self];
