@@ -151,6 +151,8 @@
                     // A bug is here.
                     // [self onPurchaseCompletedGATracking:[orderPFObject objectId]];
                     
+                    // https://developers.google.com/analytics/devguides/collection/ios/v2/ecommerce
+                    
                     // Assumes a tracker has already been initialized with a property ID, otherwise
                     // this call returns null.
                     id tracker = [[GAI sharedInstance] defaultTracker];
