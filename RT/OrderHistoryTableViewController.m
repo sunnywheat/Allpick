@@ -7,6 +7,10 @@
 //
 
 #import "OrderHistoryTableViewController.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
+
 
 @interface OrderHistoryTableViewController ()
 
@@ -42,7 +46,13 @@
 {
     [super viewDidLoad];
     
+    // GAI Tracking
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"History"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
     self.navigationItem.title = @"History";
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
