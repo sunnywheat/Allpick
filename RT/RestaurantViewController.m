@@ -8,6 +8,7 @@
 
 #import "RestaurantViewController.h"
 #import "CartSummary.h"
+#import "AppDelegate.h"
 
 
 @interface RestaurantViewController ()
@@ -30,13 +31,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Set screen name
+    self.screenName = @"Home";
+    
     self.navigationItem.title = @"Home";
     [self.navigationItem setHidesBackButton:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.screenName = @"Home";
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"currentOrder"] != NULL) {
         [self.currentOrderLabel setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"currentOrder"]];

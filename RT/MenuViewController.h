@@ -9,14 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "MenuListTableViewController.h"
+#import "GAITrackedViewController.h"
 
 @class MenuListTableViewController;
 
-@interface MenuViewController : UIViewController <MenuListTableViewControllerDelegate, UIAlertViewDelegate>
+@interface MenuViewController : GAITrackedViewController <MenuListTableViewControllerDelegate, UIAlertViewDelegate>
 {
     @private
     MenuListTableViewController *menuListTableViewController;
 }
-
 
 @end
